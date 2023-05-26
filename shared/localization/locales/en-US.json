@@ -317,6 +317,15 @@
   "core/audits/accessibility/label.js | title": {
     "message": "Form elements have associated labels"
   },
+  "core/audits/accessibility/link-in-text-block.js | description": {
+    "message": "Low-contrast text is difficult or impossible for many users to read. Link text that is discernible improves the experience for users with low vision. [Learn how to make links distinguishable](https://dequeuniversity.com/rules/axe/4.7/link-in-text-block)."
+  },
+  "core/audits/accessibility/link-in-text-block.js | failureTitle": {
+    "message": "Links rely on color to be distinguishable."
+  },
+  "core/audits/accessibility/link-in-text-block.js | title": {
+    "message": "Links are distinguishable without relying on color."
+  },
   "core/audits/accessibility/link-name.js | description": {
     "message": "Link text (and alternate text for images, when used as links) that is discernible, unique, and focusable improves the navigation experience for screen reader users. [Learn how to make links accessible](https://dequeuniversity.com/rules/axe/4.7/link-name)."
   },
@@ -370,6 +379,15 @@
   },
   "core/audits/accessibility/object-alt.js | title": {
     "message": "`<object>` elements have alternate text"
+  },
+  "core/audits/accessibility/select-name.js | description": {
+    "message": "Form elements without effective labels can create frustrating experiences for screen reader users. [Learn more about the `select` element](https://dequeuniversity.com/rules/axe/4.7/select-name)."
+  },
+  "core/audits/accessibility/select-name.js | failureTitle": {
+    "message": "Select elements do not have associated label elements."
+  },
+  "core/audits/accessibility/select-name.js | title": {
+    "message": "Select elements have associated label elements."
   },
   "core/audits/accessibility/tabindex.js | description": {
     "message": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about the `tabindex` attribute](https://dequeuniversity.com/rules/axe/4.7/tabindex)."

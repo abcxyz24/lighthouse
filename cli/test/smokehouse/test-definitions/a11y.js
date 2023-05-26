@@ -622,6 +622,22 @@ const expectations = {
       //     ],
       //   },
       // },
+      'link-in-text-block': {
+        score: 0,
+        details: {
+          items: [
+            {
+              node: {
+                'type': 'node',
+                'selector': 'body > section > p > a#link-in-text-block',
+                'snippet': '<a style="text-decoration: none; color: blue" href="#" id="link-in-text-block">',
+                'explanation': 'Fix any of the following:\n  The link has insufficient color contrast of 2.44:1 with the surrounding text. (Minimum contrast is 3:1, link text: #0000ff, surrounding text: #000000)\n  The link has no styling (such as underline) to distinguish it from the surrounding text',
+                'nodeLabel': 'link text ',
+              },
+            },
+          ],
+        },
+      },
       'link-name': {
         score: 0,
         details: {
@@ -697,6 +713,22 @@ const expectations = {
                 'snippet': '<object id="object-alt" data="data:text/html,data">',
                 'explanation': 'Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
                 'nodeLabel': 'body > section > object#object-alt',
+              },
+            },
+          ],
+        },
+      },
+      'select-name': {
+        score: 0,
+        details: {
+          items: [
+            {
+              node: {
+                'type': 'node',
+                'selector': 'body > section > select#select-name',
+                'snippet': '<select id="select-name">',
+                'explanation': 'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
+                'nodeLabel': 'body > section > select#select-name',
               },
             },
           ],

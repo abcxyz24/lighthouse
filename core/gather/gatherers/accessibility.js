@@ -52,7 +52,7 @@ async function runA11yChecks() {
       'html-xml-lang-mismatch': {enabled: true},
       'identical-links-same-purpose': {enabled: false},
       'input-button-name': {enabled: true},
-      'link-in-text-block': {enabled: false},
+      'link-in-text-block': {enabled: true},
       'marquee': {enabled: false},
       'meta-viewport': {enabled: true},
       // https://github.com/dequelabs/axe-core/issues/2958
@@ -60,7 +60,7 @@ async function runA11yChecks() {
       'no-autoplay-audio': {enabled: false},
       'role-img-alt': {enabled: false},
       'scrollable-region-focusable': {enabled: false},
-      'select-name': {enabled: false},
+      'select-name': {enabled: true},
       'server-side-image-map': {enabled: false},
       'svg-img-alt': {enabled: false},
       'tabindex': {enabled: true},

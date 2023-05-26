@@ -2429,6 +2429,18 @@
               "items": []
             }
           },
+          "link-in-text-block": {
+            "id": "link-in-text-block",
+            "title": "Links are distinguishable without relying on color.",
+            "description": "Low-contrast text is difficult or impossible for many users to read. Link text that is discernible improves the experience for users with low vision. [Learn how to make links distinguishable](https://dequeuniversity.com/rules/axe/4.7/link-in-text-block).",
+            "score": 1,
+            "scoreDisplayMode": "binary",
+            "details": {
+              "type": "table",
+              "headings": [],
+              "items": []
+            }
+          },
           "list": {
             "id": "list",
             "title": "Lists contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).",
@@ -2478,6 +2490,18 @@
             "description": "Screen readers cannot translate non-text content. Adding alternate text to `<object>` elements helps screen readers convey meaning to users. [Learn more about alt text for `object` elements](https://dequeuniversity.com/rules/axe/4.7/object-alt).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
+          },
+          "select-name": {
+            "id": "select-name",
+            "title": "Select elements have associated label elements.",
+            "description": "Form elements without effective labels can create frustrating experiences for screen reader users. [Learn more about the `select` element](https://dequeuniversity.com/rules/axe/4.7/select-name).",
+            "score": 1,
+            "scoreDisplayMode": "binary",
+            "details": {
+              "type": "table",
+              "headings": [],
+              "items": []
+            }
           },
           "tabindex": {
             "id": "tabindex",
@@ -3945,6 +3969,11 @@
                 "group": "a11y-names-labels"
               },
               {
+                "id": "link-in-text-block",
+                "weight": 3,
+                "group": "a11y-color-contrast"
+              },
+              {
                 "id": "link-name",
                 "weight": 3,
                 "group": "a11y-names-labels"
@@ -3972,6 +4001,11 @@
               {
                 "id": "object-alt",
                 "weight": 0,
+                "group": "a11y-names-labels"
+              },
+              {
+                "id": "select-name",
+                "weight": 3,
                 "group": "a11y-names-labels"
               },
               {
@@ -6136,390 +6170,402 @@
             },
             {
               "startTime": 209,
-              "name": "lh:audit:list",
+              "name": "lh:audit:link-in-text-block",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 210,
-              "name": "lh:audit:listitem",
+              "name": "lh:audit:list",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 211,
-              "name": "lh:audit:meta-refresh",
+              "name": "lh:audit:listitem",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 212,
-              "name": "lh:audit:meta-viewport",
+              "name": "lh:audit:meta-refresh",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 213,
-              "name": "lh:audit:object-alt",
+              "name": "lh:audit:meta-viewport",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 214,
-              "name": "lh:audit:tabindex",
+              "name": "lh:audit:object-alt",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 215,
-              "name": "lh:audit:table-fake-caption",
+              "name": "lh:audit:select-name",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 216,
-              "name": "lh:audit:td-has-header",
+              "name": "lh:audit:tabindex",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 217,
-              "name": "lh:audit:td-headers-attr",
+              "name": "lh:audit:table-fake-caption",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 218,
-              "name": "lh:audit:th-has-data-cells",
+              "name": "lh:audit:td-has-header",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 219,
-              "name": "lh:audit:valid-lang",
+              "name": "lh:audit:td-headers-attr",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 220,
-              "name": "lh:audit:video-caption",
+              "name": "lh:audit:th-has-data-cells",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 221,
-              "name": "lh:audit:custom-controls-labels",
+              "name": "lh:audit:valid-lang",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 222,
-              "name": "lh:audit:custom-controls-roles",
+              "name": "lh:audit:video-caption",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 223,
-              "name": "lh:audit:focus-traps",
+              "name": "lh:audit:custom-controls-labels",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 224,
-              "name": "lh:audit:focusable-controls",
+              "name": "lh:audit:custom-controls-roles",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 225,
-              "name": "lh:audit:interactive-element-affordance",
+              "name": "lh:audit:focus-traps",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 226,
-              "name": "lh:audit:logical-tab-order",
+              "name": "lh:audit:focusable-controls",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 227,
-              "name": "lh:audit:managed-focus",
+              "name": "lh:audit:interactive-element-affordance",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 228,
-              "name": "lh:audit:offscreen-content-hidden",
+              "name": "lh:audit:logical-tab-order",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 229,
-              "name": "lh:audit:use-landmarks",
+              "name": "lh:audit:managed-focus",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 230,
-              "name": "lh:audit:visual-order-follows-dom",
+              "name": "lh:audit:offscreen-content-hidden",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 231,
-              "name": "lh:audit:uses-long-cache-ttl",
+              "name": "lh:audit:use-landmarks",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 232,
-              "name": "lh:audit:total-byte-weight",
+              "name": "lh:audit:visual-order-follows-dom",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 233,
-              "name": "lh:audit:offscreen-images",
+              "name": "lh:audit:uses-long-cache-ttl",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 234,
-              "name": "lh:audit:render-blocking-resources",
+              "name": "lh:audit:total-byte-weight",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 235,
-              "name": "lh:computed:UnusedCSS",
+              "name": "lh:audit:offscreen-images",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 236,
-              "name": "lh:computed:FirstContentfulPaint",
+              "name": "lh:audit:render-blocking-resources",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 237,
-              "name": "lh:audit:unminified-css",
+              "name": "lh:computed:UnusedCSS",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 238,
-              "name": "lh:audit:unminified-javascript",
+              "name": "lh:computed:FirstContentfulPaint",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 239,
-              "name": "lh:audit:unused-css-rules",
+              "name": "lh:audit:unminified-css",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 240,
-              "name": "lh:audit:unused-javascript",
+              "name": "lh:audit:unminified-javascript",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 241,
-              "name": "lh:audit:modern-image-formats",
+              "name": "lh:audit:unused-css-rules",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 242,
-              "name": "lh:audit:uses-optimized-images",
+              "name": "lh:audit:unused-javascript",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 243,
-              "name": "lh:audit:uses-text-compression",
+              "name": "lh:audit:modern-image-formats",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 244,
-              "name": "lh:audit:uses-responsive-images",
+              "name": "lh:audit:uses-optimized-images",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 245,
-              "name": "lh:computed:ImageRecords",
+              "name": "lh:audit:uses-text-compression",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 246,
-              "name": "lh:audit:efficient-animated-content",
+              "name": "lh:audit:uses-responsive-images",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 247,
-              "name": "lh:audit:duplicated-javascript",
+              "name": "lh:computed:ImageRecords",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 248,
-              "name": "lh:audit:legacy-javascript",
+              "name": "lh:audit:efficient-animated-content",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 249,
-              "name": "lh:audit:doctype",
+              "name": "lh:audit:duplicated-javascript",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 250,
-              "name": "lh:audit:charset",
+              "name": "lh:audit:legacy-javascript",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 251,
-              "name": "lh:audit:dom-size",
+              "name": "lh:audit:doctype",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 252,
-              "name": "lh:audit:geolocation-on-start",
+              "name": "lh:audit:charset",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 253,
-              "name": "lh:audit:inspector-issues",
+              "name": "lh:audit:dom-size",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 254,
-              "name": "lh:audit:no-document-write",
+              "name": "lh:audit:geolocation-on-start",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 255,
-              "name": "lh:audit:js-libraries",
+              "name": "lh:audit:inspector-issues",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 256,
-              "name": "lh:audit:notification-on-start",
+              "name": "lh:audit:no-document-write",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 257,
-              "name": "lh:audit:paste-preventing-inputs",
+              "name": "lh:audit:js-libraries",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 258,
-              "name": "lh:audit:uses-passive-event-listeners",
+              "name": "lh:audit:notification-on-start",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 259,
-              "name": "lh:audit:meta-description",
+              "name": "lh:audit:paste-preventing-inputs",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 260,
-              "name": "lh:audit:http-status-code",
+              "name": "lh:audit:uses-passive-event-listeners",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 261,
-              "name": "lh:audit:font-size",
+              "name": "lh:audit:meta-description",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 262,
-              "name": "lh:audit:link-text",
+              "name": "lh:audit:http-status-code",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 263,
-              "name": "lh:audit:crawlable-anchors",
+              "name": "lh:audit:font-size",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 264,
-              "name": "lh:audit:is-crawlable",
+              "name": "lh:audit:link-text",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 265,
-              "name": "lh:audit:robots-txt",
+              "name": "lh:audit:crawlable-anchors",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 266,
-              "name": "lh:audit:tap-targets",
+              "name": "lh:audit:is-crawlable",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 267,
-              "name": "lh:audit:hreflang",
+              "name": "lh:audit:robots-txt",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 268,
-              "name": "lh:audit:plugins",
+              "name": "lh:audit:tap-targets",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 269,
-              "name": "lh:audit:canonical",
+              "name": "lh:audit:hreflang",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 270,
-              "name": "lh:audit:structured-data",
+              "name": "lh:audit:plugins",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 271,
-              "name": "lh:audit:bf-cache",
+              "name": "lh:audit:canonical",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 272,
+              "name": "lh:audit:structured-data",
+              "duration": 1,
+              "entryType": "measure"
+            },
+            {
+              "startTime": 273,
+              "name": "lh:audit:bf-cache",
+              "duration": 1,
+              "entryType": "measure"
+            },
+            {
+              "startTime": 274,
               "name": "lh:runner:generate",
               "duration": 1,
               "entryType": "measure"
             }
           ],
-          "total": 273
+          "total": 275
         },
         "i18n": {
           "rendererFormattedStrings": {
@@ -7368,6 +7414,12 @@
             "core/audits/accessibility/link-name.js | description": [
               "audits[link-name].description"
             ],
+            "core/audits/accessibility/link-in-text-block.js | title": [
+              "audits[link-in-text-block].title"
+            ],
+            "core/audits/accessibility/link-in-text-block.js | description": [
+              "audits[link-in-text-block].description"
+            ],
             "core/audits/accessibility/list.js | title": [
               "audits.list.title"
             ],
@@ -7397,6 +7449,12 @@
             ],
             "core/audits/accessibility/object-alt.js | description": [
               "audits[object-alt].description"
+            ],
+            "core/audits/accessibility/select-name.js | title": [
+              "audits[select-name].title"
+            ],
+            "core/audits/accessibility/select-name.js | description": [
+              "audits[select-name].description"
             ],
             "core/audits/accessibility/tabindex.js | title": [
               "audits.tabindex.title"
@@ -13523,6 +13581,18 @@
               "items": []
             }
           },
+          "link-in-text-block": {
+            "id": "link-in-text-block",
+            "title": "Links are distinguishable without relying on color.",
+            "description": "Low-contrast text is difficult or impossible for many users to read. Link text that is discernible improves the experience for users with low vision. [Learn how to make links distinguishable](https://dequeuniversity.com/rules/axe/4.7/link-in-text-block).",
+            "score": 1,
+            "scoreDisplayMode": "binary",
+            "details": {
+              "type": "table",
+              "headings": [],
+              "items": []
+            }
+          },
           "list": {
             "id": "list",
             "title": "Lists contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).",
@@ -13572,6 +13642,18 @@
             "description": "Screen readers cannot translate non-text content. Adding alternate text to `<object>` elements helps screen readers convey meaning to users. [Learn more about alt text for `object` elements](https://dequeuniversity.com/rules/axe/4.7/object-alt).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
+          },
+          "select-name": {
+            "id": "select-name",
+            "title": "Select elements have associated label elements.",
+            "description": "Form elements without effective labels can create frustrating experiences for screen reader users. [Learn more about the `select` element](https://dequeuniversity.com/rules/axe/4.7/select-name).",
+            "score": 1,
+            "scoreDisplayMode": "binary",
+            "details": {
+              "type": "table",
+              "headings": [],
+              "items": []
+            }
           },
           "tabindex": {
             "id": "tabindex",
@@ -14360,6 +14442,11 @@
                 "group": "a11y-names-labels"
               },
               {
+                "id": "link-in-text-block",
+                "weight": 3,
+                "group": "a11y-color-contrast"
+              },
+              {
                 "id": "link-name",
                 "weight": 3,
                 "group": "a11y-names-labels"
@@ -14387,6 +14474,11 @@
               {
                 "id": "object-alt",
                 "weight": 0,
+                "group": "a11y-names-labels"
+              },
+              {
+                "id": "select-name",
+                "weight": 3,
                 "group": "a11y-names-labels"
               },
               {
@@ -14466,7 +14558,7 @@
               }
             ],
             "id": "accessibility",
-            "score": 0.91
+            "score": 0.92
           },
           "best-practices": {
             "title": "Best Practices",
@@ -15767,222 +15859,234 @@
             },
             {
               "startTime": 68,
-              "name": "lh:audit:list",
+              "name": "lh:audit:link-in-text-block",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 69,
-              "name": "lh:audit:listitem",
+              "name": "lh:audit:list",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 70,
-              "name": "lh:audit:meta-refresh",
+              "name": "lh:audit:listitem",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 71,
-              "name": "lh:audit:meta-viewport",
+              "name": "lh:audit:meta-refresh",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 72,
-              "name": "lh:audit:object-alt",
+              "name": "lh:audit:meta-viewport",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 73,
-              "name": "lh:audit:tabindex",
+              "name": "lh:audit:object-alt",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 74,
-              "name": "lh:audit:table-fake-caption",
+              "name": "lh:audit:select-name",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 75,
-              "name": "lh:audit:td-has-header",
+              "name": "lh:audit:tabindex",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 76,
-              "name": "lh:audit:td-headers-attr",
+              "name": "lh:audit:table-fake-caption",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 77,
-              "name": "lh:audit:th-has-data-cells",
+              "name": "lh:audit:td-has-header",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 78,
-              "name": "lh:audit:valid-lang",
+              "name": "lh:audit:td-headers-attr",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 79,
-              "name": "lh:audit:video-caption",
+              "name": "lh:audit:th-has-data-cells",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 80,
-              "name": "lh:audit:custom-controls-labels",
+              "name": "lh:audit:valid-lang",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 81,
-              "name": "lh:audit:custom-controls-roles",
+              "name": "lh:audit:video-caption",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 82,
-              "name": "lh:audit:focus-traps",
+              "name": "lh:audit:custom-controls-labels",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 83,
-              "name": "lh:audit:focusable-controls",
+              "name": "lh:audit:custom-controls-roles",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 84,
-              "name": "lh:audit:interactive-element-affordance",
+              "name": "lh:audit:focus-traps",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 85,
-              "name": "lh:audit:logical-tab-order",
+              "name": "lh:audit:focusable-controls",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 86,
-              "name": "lh:audit:managed-focus",
+              "name": "lh:audit:interactive-element-affordance",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 87,
-              "name": "lh:audit:offscreen-content-hidden",
+              "name": "lh:audit:logical-tab-order",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 88,
-              "name": "lh:audit:use-landmarks",
+              "name": "lh:audit:managed-focus",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 89,
-              "name": "lh:audit:visual-order-follows-dom",
+              "name": "lh:audit:offscreen-content-hidden",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 90,
-              "name": "lh:audit:uses-responsive-images-snapshot",
+              "name": "lh:audit:use-landmarks",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 91,
-              "name": "lh:audit:doctype",
+              "name": "lh:audit:visual-order-follows-dom",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 92,
-              "name": "lh:audit:dom-size",
+              "name": "lh:audit:uses-responsive-images-snapshot",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 93,
-              "name": "lh:audit:js-libraries",
+              "name": "lh:audit:doctype",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 94,
-              "name": "lh:audit:paste-preventing-inputs",
+              "name": "lh:audit:dom-size",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 95,
-              "name": "lh:audit:meta-description",
+              "name": "lh:audit:js-libraries",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 96,
-              "name": "lh:audit:font-size",
+              "name": "lh:audit:paste-preventing-inputs",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 97,
-              "name": "lh:audit:link-text",
+              "name": "lh:audit:meta-description",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 98,
-              "name": "lh:audit:crawlable-anchors",
+              "name": "lh:audit:font-size",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 99,
-              "name": "lh:audit:robots-txt",
+              "name": "lh:audit:link-text",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 100,
-              "name": "lh:audit:tap-targets",
+              "name": "lh:audit:crawlable-anchors",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 101,
-              "name": "lh:audit:plugins",
+              "name": "lh:audit:robots-txt",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 102,
-              "name": "lh:audit:structured-data",
+              "name": "lh:audit:tap-targets",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 103,
+              "name": "lh:audit:plugins",
+              "duration": 1,
+              "entryType": "measure"
+            },
+            {
+              "startTime": 104,
+              "name": "lh:audit:structured-data",
+              "duration": 1,
+              "entryType": "measure"
+            },
+            {
+              "startTime": 105,
               "name": "lh:runner:generate",
               "duration": 1,
               "entryType": "measure"
             }
           ],
-          "total": 104
+          "total": 106
         },
         "i18n": {
           "rendererFormattedStrings": {
@@ -16302,6 +16406,12 @@
             "core/audits/accessibility/link-name.js | description": [
               "audits[link-name].description"
             ],
+            "core/audits/accessibility/link-in-text-block.js | title": [
+              "audits[link-in-text-block].title"
+            ],
+            "core/audits/accessibility/link-in-text-block.js | description": [
+              "audits[link-in-text-block].description"
+            ],
             "core/audits/accessibility/list.js | title": [
               "audits.list.title"
             ],
@@ -16331,6 +16441,12 @@
             ],
             "core/audits/accessibility/object-alt.js | description": [
               "audits[object-alt].description"
+            ],
+            "core/audits/accessibility/select-name.js | title": [
+              "audits[select-name].title"
+            ],
+            "core/audits/accessibility/select-name.js | description": [
+              "audits[select-name].description"
             ],
             "core/audits/accessibility/tabindex.js | title": [
               "audits.tabindex.title"
@@ -19039,6 +19155,18 @@
               "items": []
             }
           },
+          "link-in-text-block": {
+            "id": "link-in-text-block",
+            "title": "Links are distinguishable without relying on color.",
+            "description": "Low-contrast text is difficult or impossible for many users to read. Link text that is discernible improves the experience for users with low vision. [Learn how to make links distinguishable](https://dequeuniversity.com/rules/axe/4.7/link-in-text-block).",
+            "score": 1,
+            "scoreDisplayMode": "binary",
+            "details": {
+              "type": "table",
+              "headings": [],
+              "items": []
+            }
+          },
           "list": {
             "id": "list",
             "title": "Lists contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).",
@@ -19088,6 +19216,18 @@
             "description": "Screen readers cannot translate non-text content. Adding alternate text to `<object>` elements helps screen readers convey meaning to users. [Learn more about alt text for `object` elements](https://dequeuniversity.com/rules/axe/4.7/object-alt).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
+          },
+          "select-name": {
+            "id": "select-name",
+            "title": "Select elements have associated label elements.",
+            "description": "Form elements without effective labels can create frustrating experiences for screen reader users. [Learn more about the `select` element](https://dequeuniversity.com/rules/axe/4.7/select-name).",
+            "score": 1,
+            "scoreDisplayMode": "binary",
+            "details": {
+              "type": "table",
+              "headings": [],
+              "items": []
+            }
           },
           "tabindex": {
             "id": "tabindex",
@@ -20682,6 +20822,11 @@
                 "group": "a11y-names-labels"
               },
               {
+                "id": "link-in-text-block",
+                "weight": 3,
+                "group": "a11y-color-contrast"
+              },
+              {
                 "id": "link-name",
                 "weight": 3,
                 "group": "a11y-names-labels"
@@ -20709,6 +20854,11 @@
               {
                 "id": "object-alt",
                 "weight": 0,
+                "group": "a11y-names-labels"
+              },
+              {
+                "id": "select-name",
+                "weight": 3,
                 "group": "a11y-names-labels"
               },
               {
@@ -20788,7 +20938,7 @@
               }
             ],
             "id": "accessibility",
-            "score": 0.93
+            "score": 0.94
           },
           "best-practices": {
             "title": "Best Practices",
@@ -22847,390 +22997,402 @@
             },
             {
               "startTime": 206,
-              "name": "lh:audit:list",
+              "name": "lh:audit:link-in-text-block",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 207,
-              "name": "lh:audit:listitem",
+              "name": "lh:audit:list",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 208,
-              "name": "lh:audit:meta-refresh",
+              "name": "lh:audit:listitem",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 209,
-              "name": "lh:audit:meta-viewport",
+              "name": "lh:audit:meta-refresh",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 210,
-              "name": "lh:audit:object-alt",
+              "name": "lh:audit:meta-viewport",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 211,
-              "name": "lh:audit:tabindex",
+              "name": "lh:audit:object-alt",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 212,
-              "name": "lh:audit:table-fake-caption",
+              "name": "lh:audit:select-name",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 213,
-              "name": "lh:audit:td-has-header",
+              "name": "lh:audit:tabindex",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 214,
-              "name": "lh:audit:td-headers-attr",
+              "name": "lh:audit:table-fake-caption",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 215,
-              "name": "lh:audit:th-has-data-cells",
+              "name": "lh:audit:td-has-header",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 216,
-              "name": "lh:audit:valid-lang",
+              "name": "lh:audit:td-headers-attr",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 217,
-              "name": "lh:audit:video-caption",
+              "name": "lh:audit:th-has-data-cells",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 218,
-              "name": "lh:audit:custom-controls-labels",
+              "name": "lh:audit:valid-lang",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 219,
-              "name": "lh:audit:custom-controls-roles",
+              "name": "lh:audit:video-caption",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 220,
-              "name": "lh:audit:focus-traps",
+              "name": "lh:audit:custom-controls-labels",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 221,
-              "name": "lh:audit:focusable-controls",
+              "name": "lh:audit:custom-controls-roles",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 222,
-              "name": "lh:audit:interactive-element-affordance",
+              "name": "lh:audit:focus-traps",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 223,
-              "name": "lh:audit:logical-tab-order",
+              "name": "lh:audit:focusable-controls",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 224,
-              "name": "lh:audit:managed-focus",
+              "name": "lh:audit:interactive-element-affordance",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 225,
-              "name": "lh:audit:offscreen-content-hidden",
+              "name": "lh:audit:logical-tab-order",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 226,
-              "name": "lh:audit:use-landmarks",
+              "name": "lh:audit:managed-focus",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 227,
-              "name": "lh:audit:visual-order-follows-dom",
+              "name": "lh:audit:offscreen-content-hidden",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 228,
-              "name": "lh:audit:uses-long-cache-ttl",
+              "name": "lh:audit:use-landmarks",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 229,
-              "name": "lh:audit:total-byte-weight",
+              "name": "lh:audit:visual-order-follows-dom",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 230,
-              "name": "lh:audit:offscreen-images",
+              "name": "lh:audit:uses-long-cache-ttl",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 231,
-              "name": "lh:audit:render-blocking-resources",
+              "name": "lh:audit:total-byte-weight",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 232,
-              "name": "lh:computed:UnusedCSS",
+              "name": "lh:audit:offscreen-images",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 233,
-              "name": "lh:computed:FirstContentfulPaint",
+              "name": "lh:audit:render-blocking-resources",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 234,
-              "name": "lh:audit:unminified-css",
+              "name": "lh:computed:UnusedCSS",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 235,
-              "name": "lh:audit:unminified-javascript",
+              "name": "lh:computed:FirstContentfulPaint",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 236,
-              "name": "lh:audit:unused-css-rules",
+              "name": "lh:audit:unminified-css",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 237,
-              "name": "lh:audit:unused-javascript",
+              "name": "lh:audit:unminified-javascript",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 238,
-              "name": "lh:audit:modern-image-formats",
+              "name": "lh:audit:unused-css-rules",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 239,
-              "name": "lh:audit:uses-optimized-images",
+              "name": "lh:audit:unused-javascript",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 240,
-              "name": "lh:audit:uses-text-compression",
+              "name": "lh:audit:modern-image-formats",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 241,
-              "name": "lh:audit:uses-responsive-images",
+              "name": "lh:audit:uses-optimized-images",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 242,
-              "name": "lh:computed:ImageRecords",
+              "name": "lh:audit:uses-text-compression",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 243,
-              "name": "lh:audit:efficient-animated-content",
+              "name": "lh:audit:uses-responsive-images",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 244,
-              "name": "lh:audit:duplicated-javascript",
+              "name": "lh:computed:ImageRecords",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 245,
-              "name": "lh:audit:legacy-javascript",
+              "name": "lh:audit:efficient-animated-content",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 246,
-              "name": "lh:audit:doctype",
+              "name": "lh:audit:duplicated-javascript",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 247,
-              "name": "lh:audit:charset",
+              "name": "lh:audit:legacy-javascript",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 248,
-              "name": "lh:audit:dom-size",
+              "name": "lh:audit:doctype",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 249,
-              "name": "lh:audit:geolocation-on-start",
+              "name": "lh:audit:charset",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 250,
-              "name": "lh:audit:inspector-issues",
+              "name": "lh:audit:dom-size",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 251,
-              "name": "lh:audit:no-document-write",
+              "name": "lh:audit:geolocation-on-start",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 252,
-              "name": "lh:audit:js-libraries",
+              "name": "lh:audit:inspector-issues",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 253,
-              "name": "lh:audit:notification-on-start",
+              "name": "lh:audit:no-document-write",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 254,
-              "name": "lh:audit:paste-preventing-inputs",
+              "name": "lh:audit:js-libraries",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 255,
-              "name": "lh:audit:uses-passive-event-listeners",
+              "name": "lh:audit:notification-on-start",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 256,
-              "name": "lh:audit:meta-description",
+              "name": "lh:audit:paste-preventing-inputs",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 257,
-              "name": "lh:audit:http-status-code",
+              "name": "lh:audit:uses-passive-event-listeners",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 258,
-              "name": "lh:audit:font-size",
+              "name": "lh:audit:meta-description",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 259,
-              "name": "lh:audit:link-text",
+              "name": "lh:audit:http-status-code",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 260,
-              "name": "lh:audit:crawlable-anchors",
+              "name": "lh:audit:font-size",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 261,
-              "name": "lh:audit:is-crawlable",
+              "name": "lh:audit:link-text",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 262,
-              "name": "lh:audit:robots-txt",
+              "name": "lh:audit:crawlable-anchors",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 263,
-              "name": "lh:audit:tap-targets",
+              "name": "lh:audit:is-crawlable",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 264,
-              "name": "lh:audit:hreflang",
+              "name": "lh:audit:robots-txt",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 265,
-              "name": "lh:audit:plugins",
+              "name": "lh:audit:tap-targets",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 266,
-              "name": "lh:audit:canonical",
+              "name": "lh:audit:hreflang",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 267,
-              "name": "lh:audit:structured-data",
+              "name": "lh:audit:plugins",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 268,
-              "name": "lh:audit:bf-cache",
+              "name": "lh:audit:canonical",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 269,
+              "name": "lh:audit:structured-data",
+              "duration": 1,
+              "entryType": "measure"
+            },
+            {
+              "startTime": 270,
+              "name": "lh:audit:bf-cache",
+              "duration": 1,
+              "entryType": "measure"
+            },
+            {
+              "startTime": 271,
               "name": "lh:runner:generate",
               "duration": 1,
               "entryType": "measure"
             }
           ],
-          "total": 270
+          "total": 272
         },
         "i18n": {
           "rendererFormattedStrings": {
@@ -24072,6 +24234,12 @@
             "core/audits/accessibility/link-name.js | description": [
               "audits[link-name].description"
             ],
+            "core/audits/accessibility/link-in-text-block.js | title": [
+              "audits[link-in-text-block].title"
+            ],
+            "core/audits/accessibility/link-in-text-block.js | description": [
+              "audits[link-in-text-block].description"
+            ],
             "core/audits/accessibility/list.js | title": [
               "audits.list.title"
             ],
@@ -24101,6 +24269,12 @@
             ],
             "core/audits/accessibility/object-alt.js | description": [
               "audits[object-alt].description"
+            ],
+            "core/audits/accessibility/select-name.js | title": [
+              "audits[select-name].title"
+            ],
+            "core/audits/accessibility/select-name.js | description": [
+              "audits[select-name].description"
             ],
             "core/audits/accessibility/tabindex.js | title": [
               "audits.tabindex.title"
