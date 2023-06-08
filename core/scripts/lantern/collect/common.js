@@ -5,9 +5,10 @@
  */
 
 /** @typedef {{devtoolsLog?: string, lhr: string, trace: string}} Result */
-/** @typedef {{url: string, wpt: Result[], unthrottled: Result[]}} ResultsForUrl */
+/** @typedef {{url: string, wpt: Result|null, wptRetries: number, unthrottled: Result|null, unthrottledRetries: number, errors?: string[]}} ResultsForUrl */
 /** @typedef {Result & {metrics: LH.Artifacts.TimingSummary}} ResultWithMetrics */
-/** @typedef {{results: ResultsForUrl[], warnings: string[]}} Summary */
+/** @typedef {{results: ResultsForUrl[]}} Summary */
+/** @typedef {import('../run-on-all-assets.js').Golden} Golden */
 
 import fs from 'fs';
 import readline from 'readline';
@@ -22,7 +23,7 @@ const streamFinished = promisify(stream.finished);
 
 const collectFolder = `${LH_ROOT}/dist/collect-lantern-traces`;
 const summaryPath = `${collectFolder}/summary.json`;
-const goldenFolder = `${LH_ROOT}/dist/golden-lantern-traces`;
+const goldenPath = `${collectFolder}/site-index-plus-golden-expectations.json`;
 
 const IS_INTERACTIVE = !!process.stdout.isTTY && !process.env.GCP_COLLECT;
 
@@ -94,7 +95,7 @@ function loadSummary() {
   if (fs.existsSync(summaryPath)) {
     return JSON.parse(fs.readFileSync(summaryPath, 'utf-8'));
   } else {
-    return {results: [], warnings: []};
+    return {results: []};
   }
 }
 
@@ -103,6 +104,13 @@ function loadSummary() {
  */
 function saveSummary(summary) {
   fs.writeFileSync(summaryPath, JSON.stringify(summary, null, 2));
+}
+
+/**
+ * @param {Golden} golden
+ */
+function saveGolden(golden) {
+  fs.writeFileSync(goldenPath, JSON.stringify(golden, null, 2));
 }
 
 /**
@@ -130,9 +138,9 @@ function getMetrics(lhr) {
 export {
   ProgressLogger,
   collectFolder,
-  goldenFolder,
   archive,
   loadSummary,
   saveSummary,
+  saveGolden,
   getMetrics,
 };

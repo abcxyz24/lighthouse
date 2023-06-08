@@ -6142,7 +6142,7 @@ query-string@^4.1.0:
     object-assign "^4.1.0"
     strict-uri-encode "^1.0.0"
 
-quibble@^0.6.14:
+quibble@^0.6.17:
   version "0.6.17"
   resolved "https://registry.yarnpkg.com/quibble/-/quibble-0.6.17.tgz#1c47d40c4ee670fc1a5a4277ee792ca6eec8f4ca"
   integrity sha512-uybGnGrx1hAhBCmzmVny+ycKaS5F71+q+iWVzbf8x/HyeEMDGeiQFVjWl1zhi4rwfTHa05+/NIExC4L5YRNPjQ==
@@ -7006,13 +7006,13 @@ test-exclude@^6.0.0:
     glob "^7.1.4"
     minimatch "^3.0.4"
 
-testdouble@^3.16.8:
-  version "3.16.8"
-  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.16.8.tgz#9c761031f3693d973c726e31a60ee73cd2871c96"
-  integrity sha512-jOKYRJ9mfgDxwuUOj84sl9DWiP1+KpHcgnhjlSHC8h1ZxJT3KD1FAAFVqnqmmyrzc/+0DRbI/U5xo1/K3PLi8w==
+testdouble@^3.17.2:
+  version "3.17.2"
+  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.17.2.tgz#a7d624c2040453580b4a636b3f017bf183a8f487"
+  integrity sha512-oRrk1DJISNoFr3aaczIqrrhkOUQ26BsXN3SopYT/U0GTvk9hlKPCEbd9R2uxkcufKZgEfo9D1JAB4CJrjHE9cw==
   dependencies:
     lodash "^4.17.21"
-    quibble "^0.6.14"
+    quibble "^0.6.17"
     stringify-object-es5 "^2.5.0"
     theredoc "^1.0.0"
 
@@ -7031,10 +7031,10 @@ theredoc@^1.0.0:
   resolved "https://registry.yarnpkg.com/theredoc/-/theredoc-1.0.0.tgz#bcace376af6feb1873efbdd0f91ed026570ff062"
   integrity sha512-KU3SA3TjRRM932jpNfD3u4Ec3bSvedyo5ITPI7zgWYnKep7BwQQaxlhI9qbO+lKJoRnoAbEVfMcAHRuKVYikDA==
 
-third-party-web@^0.20.2:
-  version "0.20.2"
-  resolved "https://registry.yarnpkg.com/third-party-web/-/third-party-web-0.20.2.tgz#62eb414c648e120f64aa16c926ba120a62cbd6c5"
-  integrity sha512-KFaFBDto+gH2DZW6ooFCGYrR8CGV6b/Ibsc2RTUkKhTPbxOWZuKs0NTftdAMoz0Aivf4bAHgW+kAGKciSQpqFg==
+third-party-web@^0.22.0:
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/third-party-web/-/third-party-web-0.22.0.tgz#4f4f7d25399099231bcd713500d15a75312a3e6c"
+  integrity sha512-n/s3QELstEQeIIuo9a+15dtsCMb9h/hDCQK/3O2oGUG8uxRsK+BJWQIHX/uq44Dr+VxsIVVgqHNmQ9CSyJU8ZA==
 
 through2@^2.0.0:
   version "2.0.5"

@@ -302,17 +302,6 @@ const expectations = {
           },
         },
       },
-      'is-on-https': {
-        score: 0,
-        details: {
-          items: [
-            {
-              url: 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-              resolution: 'Allowed',
-            },
-          ],
-        },
-      },
       'geolocation-on-start': {
         score: 0,
       },
@@ -585,6 +574,20 @@ const expectations = {
           },
         },
       },
+      'network-rtt': {
+        details: {
+          items: [
+            {origin: 'http://localhost:10200', rtt: '>0'},
+          ],
+        },
+      },
+      'network-server-latency': {
+        details: {
+          items: [
+            {origin: 'http://localhost:10200', serverResponseTime: '>0'},
+          ],
+        },
+      },
       'metrics': {
         // Flaky in DevTools
         _excludeRunner: 'devtools',
@@ -593,6 +596,31 @@ const expectations = {
           lcpLoadStart: '7750+/-500',
           lcpLoadEnd: '7750+/-500',
         }}},
+      },
+      'largest-contentful-paint-element': {
+        score: null,
+        displayValue: '1 element found',
+        details: {
+          items: [
+            {
+              items: [{
+                node: {
+                  type: 'node',
+                  nodeLabel: 'Do better web tester page',
+                  path: '2,HTML,1,BODY,9,DIV,2,H2',
+                },
+              }],
+            },
+            {
+              items: [
+                {timing: '>0'},
+                {timing: '>0'},
+                {timing: '>0'},
+                {timing: '>0'},
+              ],
+            },
+          ],
+        },
       },
     },
     fullPageScreenshot: {

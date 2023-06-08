@@ -341,6 +341,7 @@ class NetworkRequest {
 
     if (response.protocol) this.protocol = response.protocol;
 
+    // This is updated in _recomputeTimesWithResourceTiming, if timings are present.
     this.responseHeadersEndTime = timestamp * 1000;
 
     this.transferSize = response.encodedDataLength;
@@ -372,16 +373,27 @@ class NetworkRequest {
     // Don't recompute times if the data is invalid. RequestTime should always be a thread timestamp.
     // If we don't have receiveHeadersEnd, we really don't have more accurate data.
     if (timing.requestTime === 0 || timing.receiveHeadersEnd === -1) return;
+
     // Take networkRequestTime and responseHeadersEndTime from timing data for better accuracy.
+    // Before this, networkRequestTime and responseHeadersEndTime were set to bogus values based on
+    // CDP event timestamps, though they should be somewhat close to the network timings.
+    // Note: requests served from cache never run this function, so they use the "bogus" values.
+
     // Timing's requestTime is a baseline in seconds, rest of the numbers there are ticks in millis.
+    // See https://raw.githubusercontent.com/GoogleChrome/lighthouse/main/docs/Network-Timings.svg
     this.networkRequestTime = timing.requestTime * 1000;
     const headersReceivedTime = this.networkRequestTime + timing.receiveHeadersEnd;
-    if (!this.responseHeadersEndTime || this.responseHeadersEndTime < 0) {
-      this.responseHeadersEndTime = headersReceivedTime;
-    }
+    // This was set in `_onResponse` as that event's timestamp.
+    const responseTimestamp = this.responseHeadersEndTime;
 
-    this.responseHeadersEndTime = Math.min(this.responseHeadersEndTime, headersReceivedTime);
+    // Update this.responseHeadersEndTime. All timing values from the netstack (timing) are well-ordered, and
+    // so are the timestamps from CDP (which this.responseHeadersEndTime belongs to). It shouldn't be possible
+    // that this timing from the netstack is greater than the onResponse timestamp, but just to ensure proper order
+    // is maintained we bound the new timing by the network request time and the response timestamp.
+    this.responseHeadersEndTime = headersReceivedTime;
+    this.responseHeadersEndTime = Math.min(this.responseHeadersEndTime, responseTimestamp);
     this.responseHeadersEndTime = Math.max(this.responseHeadersEndTime, this.networkRequestTime);
+
     // We're only at responseReceived (_onResponse) at this point.
     // This networkEndTime may be redefined again after onLoading is done.
     this.networkEndTime = Math.max(this.networkEndTime, this.responseHeadersEndTime);

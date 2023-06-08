@@ -297,6 +297,12 @@ for more info.
 # lint and test all files
 yarn test
 
+# run all unit tests
+yarn unit
+
+# run a given unit test (e.g. core/test/audits/byte-efficiency/uses-long-cache-ttl-test.js)
+yarn mocha uses-long-cache-ttl
+
 # watch for file changes and run tests
 #   Requires http://entrproject.org : brew install entr
 yarn watch

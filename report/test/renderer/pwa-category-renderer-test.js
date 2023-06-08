@@ -262,7 +262,7 @@ describe('PwaCategoryRenderer', () => {
       assert.strictEqual(badgeGauge.querySelector('.lh-gauge--pwa__wrapper'), null);
 
       const percentageElem = badgeGauge.querySelector('.lh-gauge__percentage');
-      assert.strictEqual(percentageElem.textContent, '?');
+      assert.strictEqual(percentageElem.textContent, '');
       assert.strictEqual(percentageElem.title, UIStrings.errorLabel);
     });
 

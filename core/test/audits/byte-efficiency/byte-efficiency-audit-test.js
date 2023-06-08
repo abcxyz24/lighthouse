@@ -414,13 +414,14 @@ describe('Byte efficiency base audit', () => {
     it('scores wastedMs values', () => {
       expect(ByteEfficiencyAudit.scoreForWastedMs(-50)).toBe(1);
       expect(ByteEfficiencyAudit.scoreForWastedMs(0)).toBe(1);
-      expect(ByteEfficiencyAudit.scoreForWastedMs(240)).toBe(0.8);
-      expect(ByteEfficiencyAudit.scoreForWastedMs(300)).toBe(0.75);
-      expect(ByteEfficiencyAudit.scoreForWastedMs(390)).toBe(0.7);
-      expect(ByteEfficiencyAudit.scoreForWastedMs(750)).toBe(0.5);
-      expect(ByteEfficiencyAudit.scoreForWastedMs(1_175)).toBe(0.45);
-      expect(ByteEfficiencyAudit.scoreForWastedMs(5_000)).toBe(0);
-      expect(ByteEfficiencyAudit.scoreForWastedMs(10_000)).toBe(0);
+      expect(ByteEfficiencyAudit.scoreForWastedMs(240)).toBe(0.82);
+      expect(ByteEfficiencyAudit.scoreForWastedMs(300)).toBe(0.78);
+      expect(ByteEfficiencyAudit.scoreForWastedMs(390)).toBe(0.72);
+      expect(ByteEfficiencyAudit.scoreForWastedMs(750)).toBe(0.56);
+      expect(ByteEfficiencyAudit.scoreForWastedMs(1_175)).toBe(0.43);
+      expect(ByteEfficiencyAudit.scoreForWastedMs(5_000)).toBe(0.12);
+      expect(ByteEfficiencyAudit.scoreForWastedMs(10_000)).toBe(0.04);
+      expect(ByteEfficiencyAudit.scoreForWastedMs(30_000)).toBe(0);
       expect(ByteEfficiencyAudit.scoreForWastedMs(Number.MAX_VALUE)).toBe(0);
     });
   });

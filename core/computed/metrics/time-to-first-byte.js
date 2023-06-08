@@ -26,7 +26,8 @@ class TimeToFirstByte extends NavigationMetric {
 
     // Estimate when the connection is not warm.
     // TTFB = DNS + (SSL)? + TCP handshake + 1 RT for request + server response time
-    let roundTrips = 3;
+    let roundTrips = 2;
+    if (!mainResource.protocol.startsWith('h3')) roundTrips += 1; // TCP
     if (mainResource.parsedURL.scheme === 'https') roundTrips += 1;
     const estimatedTTFB = data.settings.throttling.rttMs * roundTrips + observedResponseTime;
 

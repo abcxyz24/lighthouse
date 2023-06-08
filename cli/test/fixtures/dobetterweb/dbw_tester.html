@@ -467,8 +467,10 @@ if (location.search === '') {
 <!-- Including this validates that pages that override fetch don't crash our entire stacks gatherer. -->
 <script>window.fetch = () => new Promise(r => setTimeout(r, 90000));</script>
 
-<!-- FAIL(is-on-https): requires a non-localhost http file -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- Include a fake jquery, to test js-libraries -->
+<script>
+  window.$ = {fn: {jquery: '2.1.1'}};
+</script>
 
 <!-- Filesystem URL shouldn't be flagged is-on-https. -->
 <script>

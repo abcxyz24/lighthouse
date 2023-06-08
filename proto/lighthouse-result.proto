@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package googlechrome.lighthouse;
+
 // This comment required for Lightrider import compatibility # header
 
 import "google/protobuf/struct.proto";

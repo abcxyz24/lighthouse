@@ -162,7 +162,7 @@ describe('Performance: Redirects audit', () => {
 
     const output = await RedirectsAudit.audit(artifacts, context);
     expect(output.details.items).toHaveLength(3);
-    expect(Math.round(output.score * 100) / 100).toMatchInlineSnapshot(`0.35`);
+    expect(Math.round(output.score * 100) / 100).toMatchInlineSnapshot(`0.29`);
     expect(output.numericValue).toMatchInlineSnapshot(`2000`);
   });
 
@@ -199,7 +199,7 @@ describe('Performance: Redirects audit', () => {
     const context = {settings: {}, computedCache: new Map()};
     return RedirectsAudit.audit(artifacts, context).then(output => {
       expect(output.details.items).toHaveLength(4);
-      expect(Math.round(output.score * 100) / 100).toMatchInlineSnapshot(`0.24`);
+      expect(Math.round(output.score * 100) / 100).toMatchInlineSnapshot(`0.2`);
       expect(output.numericValue).toMatchInlineSnapshot(`3000`);
     });
   });
@@ -209,7 +209,7 @@ describe('Performance: Redirects audit', () => {
     const context = {settings: {}, computedCache: new Map()};
     return RedirectsAudit.audit(artifacts, context).then(output => {
       expect(output.details.items).toHaveLength(3);
-      expect(Math.round(output.score * 100) / 100).toMatchInlineSnapshot(`0.35`);
+      expect(Math.round(output.score * 100) / 100).toMatchInlineSnapshot(`0.29`);
       expect(output.numericValue).toMatchInlineSnapshot(`2000`);
     });
   });
@@ -253,7 +253,7 @@ describe('Performance: Redirects audit', () => {
 
     const output = await RedirectsAudit.audit(artifacts, context);
     expect(output).toMatchObject({
-      score: expect.toBeApproximately(0.24),
+      score: expect.toBeApproximately(0.2),
       numericValue: 3000,
       details: {
         items: [

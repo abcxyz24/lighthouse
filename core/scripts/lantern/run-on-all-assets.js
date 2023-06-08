@@ -7,7 +7,7 @@
 
 /* eslint-disable no-console */
 
-/** @typedef {{tracePath: string, devtoolsLogPath: string}} GoldenUnthrottled */
+/** @typedef {{tracePath: string, devtoolsLogPath: string, lhrPath: string}} GoldenUnthrottled */
 /** @typedef {Record<string, number|undefined>} GoldenWpt3g */
 /**
  * @typedef Wpt3gUnthrottled

@@ -171,6 +171,13 @@ describe('DOM', () => {
       const result = dom.convertMarkdownLinkSnippets(text);
       assert.equal(result.innerHTML, '<a rel="noopener" target="_blank" href="https://example.com/info">Learn more</a>.');
     });
+
+    it('doesn\'t append utm params to other (non-docs) origins (unless forced)', () => {
+      const text = '[Learn more](https://example.com/info).';
+
+      const result = dom.convertMarkdownLinkSnippets(text, {alwaysAppendUtmSource: true});
+      assert.equal(result.innerHTML, '<a rel="noopener" target="_blank" href="https://example.com/info?utm_source=lighthouse&amp;utm_medium=someChannel">Learn more</a>.');
+    });
   });
 
   describe('convertMarkdownCodeSnippets', () => {

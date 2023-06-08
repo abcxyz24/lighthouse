@@ -194,7 +194,8 @@ class NetworkAnalyzer {
 
       // Assume everything before sendStart was just DNS + (SSL)? + TCP handshake
       // 1 RT for DNS, 1 RT (maybe) for SSL, 1 RT for TCP
-      let roundTrips = 2;
+      let roundTrips = 1;
+      if (!record.protocol.startsWith('h3')) roundTrips += 1; // TCP
       if (record.parsedURL.scheme === 'https') roundTrips += 1;
       return timing.sendStart / roundTrips;
     });
@@ -227,8 +228,8 @@ class NetworkAnalyzer {
       // TTFB = DNS + (SSL)? + TCP handshake + 1 RT for request + server response time
       if (!connectionReused) {
         roundTrips += 1; // DNS
+        if (!record.protocol.startsWith('h3')) roundTrips += 1; // TCP
         if (record.parsedURL.scheme === 'https') roundTrips += 1; // SSL
-        roundTrips += 1; // TCP handshake
       }
 
       // subtract out our estimated server response time

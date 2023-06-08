@@ -272,6 +272,15 @@
   "core/audits/accessibility/html-lang-valid.js | title": {
     "message": "`<html>` êĺêḿêńt̂ h́âś â v́âĺîd́ v̂ál̂úê f́ôŕ ît́ŝ `[lang]` át̂t́r̂íb̂út̂é"
   },
+  "core/audits/accessibility/html-xml-lang-mismatch.js | description": {
+    "message": "Îf́ t̂h́ê ẃêb́p̂áĝé d̂óêś n̂ót̂ śp̂éĉíf̂ý â ćôńŝíŝt́êńt̂ ĺâńĝúâǵê, t́ĥén̂ t́ĥé ŝćr̂éêń r̂éâd́êŕ m̂íĝh́t̂ ńôt́ âńn̂óûńĉé t̂h́ê ṕâǵê'ś t̂éx̂t́ ĉór̂ŕêćt̂ĺŷ. [Ĺêár̂ń m̂ór̂é âb́ôút̂ t́ĥé `lang` ât́t̂ŕîb́ût́ê](https://dequeuniversity.com/rules/axe/4.7/html-xml-lang-mismatch)."
+  },
+  "core/audits/accessibility/html-xml-lang-mismatch.js | failureTitle": {
+    "message": "`<html>` êĺêḿêńt̂ d́ôéŝ ńôt́ ĥáv̂é âń `[xml:lang]` ât́t̂ŕîb́ût́ê ẃît́ĥ t́ĥé ŝám̂é b̂áŝé l̂án̂ǵûáĝé âś t̂h́ê `[lang]` át̂t́r̂íb̂út̂é."
+  },
+  "core/audits/accessibility/html-xml-lang-mismatch.js | title": {
+    "message": "`<html>` êĺêḿêńt̂ h́âś âń `[xml:lang]` ât́t̂ŕîb́ût́ê ẃît́ĥ t́ĥé ŝám̂é b̂áŝé l̂án̂ǵûáĝé âś t̂h́ê `[lang]` át̂t́r̂íb̂út̂é."
+  },
   "core/audits/accessibility/image-alt.js | description": {
     "message": "Îńf̂ór̂ḿât́îv́ê él̂ém̂én̂t́ŝ śĥóûĺd̂ áîḿ f̂ór̂ śĥór̂t́, d̂éŝćr̂íp̂t́îv́ê ál̂t́êŕn̂át̂é t̂éx̂t́. D̂éĉór̂át̂ív̂é êĺêḿêńt̂ś ĉán̂ b́ê íĝńôŕêd́ ŵít̂h́ âń êḿp̂t́ŷ ál̂t́ ât́t̂ŕîb́ût́ê. [Ĺêár̂ń m̂ór̂é âb́ôút̂ t́ĥé `alt` ât́t̂ŕîb́ût́ê](https://dequeuniversity.com/rules/axe/4.7/image-alt)."
   },
@@ -280,6 +289,15 @@
   },
   "core/audits/accessibility/image-alt.js | title": {
     "message": "Îḿâǵê él̂ém̂én̂t́ŝ h́âv́ê `[alt]` át̂t́r̂íb̂út̂éŝ"
+  },
+  "core/audits/accessibility/input-button-name.js | description": {
+    "message": "Âd́d̂ín̂ǵ d̂íŝćêŕn̂áb̂ĺê án̂d́ âćĉéŝśîb́l̂é t̂éx̂t́ t̂ó îńp̂út̂ b́ût́t̂ón̂ś m̂áŷ h́êĺp̂ śĉŕêén̂ ŕêád̂ér̂ úŝér̂ś ûńd̂ér̂śt̂án̂d́ t̂h́ê ṕûŕp̂óŝé ôf́ t̂h́ê ín̂ṕût́ b̂út̂t́ôń. [L̂éâŕn̂ ḿôŕê áb̂óût́ îńp̂út̂ b́ût́t̂ón̂ś](https://dequeuniversity.com/rules/axe/4.7/input-button-name)."
+  },
+  "core/audits/accessibility/input-button-name.js | failureTitle": {
+    "message": "Îńp̂út̂ b́ût́t̂ón̂ś d̂ó n̂ót̂ h́âv́ê d́îśĉér̂ńîb́l̂é t̂éx̂t́."
+  },
+  "core/audits/accessibility/input-button-name.js | title": {
+    "message": "Îńp̂út̂ b́ût́t̂ón̂ś ĥáv̂é d̂íŝćêŕn̂íb̂ĺê t́êx́t̂."
   },
   "core/audits/accessibility/input-image-alt.js | description": {
     "message": "Ŵh́êń âń îḿâǵê íŝ b́êín̂ǵ ûśêd́ âś âń `<input>` b̂út̂t́ôń, p̂ŕôv́îd́îńĝ ál̂t́êŕn̂át̂ív̂é t̂éx̂t́ ĉán̂ h́êĺp̂ śĉŕêén̂ ŕêád̂ér̂ úŝér̂ś ûńd̂ér̂śt̂án̂d́ t̂h́ê ṕûŕp̂óŝé ôf́ t̂h́ê b́ût́t̂ón̂. [Ĺêár̂ń âb́ôút̂ ín̂ṕût́ îḿâǵê ál̂t́ t̂éx̂t́](https://dequeuniversity.com/rules/axe/4.7/input-image-alt)."
@@ -361,6 +379,15 @@
   },
   "core/audits/accessibility/tabindex.js | title": {
     "message": "N̂ó êĺêḿêńt̂ h́âś â `[tabindex]` v́âĺûé ĝŕêát̂ér̂ t́ĥán̂ 0"
+  },
+  "core/audits/accessibility/table-fake-caption.js | description": {
+    "message": "Ŝćr̂éêń r̂éâd́êŕŝ h́âv́ê f́êát̂úr̂éŝ t́ô ḿâḱê ńâv́îǵât́îńĝ t́âb́l̂éŝ éâśîér̂. Én̂śûŕîńĝ t́ĥát̂ t́âb́l̂éŝ úŝé t̂h́ê áĉt́ûál̂ ćâṕt̂íôń êĺêḿêńt̂ ín̂śt̂éâd́ ôf́ ĉél̂ĺŝ ẃît́ĥ t́ĥé `[colspan]` ât́t̂ŕîb́ût́ê ḿâý îḿp̂ŕôv́ê t́ĥé êx́p̂ér̂íêńĉé f̂ór̂ śĉŕêén̂ ŕêád̂ér̂ úŝér̂ś. [L̂éâŕn̂ ḿôŕê áb̂óût́ ĉáp̂t́îón̂ś](https://dequeuniversity.com/rules/axe/4.7/table-fake-caption)."
+  },
+  "core/audits/accessibility/table-fake-caption.js | failureTitle": {
+    "message": "T̂áb̂ĺêś d̂ó n̂ót̂ úŝé `<caption>` îńŝt́êád̂ óf̂ ćêĺl̂ś ŵít̂h́ t̂h́ê `[colspan]` át̂t́r̂íb̂út̂é t̂ó îńd̂íĉát̂é â ćâṕt̂íôń."
+  },
+  "core/audits/accessibility/table-fake-caption.js | title": {
+    "message": "T̂áb̂ĺêś ûśê `<caption>` ín̂śt̂éâd́ ôf́ ĉél̂ĺŝ ẃît́ĥ t́ĥé `[colspan]` ât́t̂ŕîb́ût́ê t́ô ín̂d́îćât́ê á ĉáp̂t́îón̂."
   },
   "core/audits/accessibility/td-has-header.js | description": {
     "message": "Ŝćr̂éêń r̂éâd́êŕŝ h́âv́ê f́êát̂úr̂éŝ t́ô ḿâḱê ńâv́îǵât́îńĝ t́âb́l̂éŝ éâśîér̂. Én̂śûŕîńĝ t́ĥát̂ `<td>` él̂ém̂én̂t́ŝ ín̂ á l̂ár̂ǵê t́âb́l̂é (3 ôŕ m̂ór̂é ĉél̂ĺŝ ín̂ ẃîd́t̂h́ âńd̂ h́êíĝh́t̂) h́âv́ê án̂ áŝśôćîát̂éd̂ t́âb́l̂é ĥéâd́êŕ m̂áŷ ím̂ṕr̂óv̂é t̂h́ê éx̂ṕêŕîén̂ćê f́ôŕ ŝćr̂éêń r̂éâd́êŕ ûśêŕŝ. [Ĺêár̂ń m̂ór̂é âb́ôút̂ t́âb́l̂é ĥéâd́êŕŝ](https://dequeuniversity.com/rules/axe/4.7/td-has-header)."

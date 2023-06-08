@@ -1277,7 +1277,8 @@
             "mimeType": "text/html",
             "resourceType": "Document",
             "priority": "VeryHigh",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.css?delay=100",
@@ -1293,7 +1294,8 @@
             "mimeType": "text/css",
             "resourceType": "Stylesheet",
             "priority": "VeryHigh",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/unknown404.css?delay=200",
@@ -1309,7 +1311,8 @@
             "mimeType": "text/css",
             "resourceType": "Stylesheet",
             "priority": "VeryHigh",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.css?delay=2200",
@@ -1325,7 +1328,8 @@
             "mimeType": "text/css",
             "resourceType": "Stylesheet",
             "priority": "VeryHigh",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_disabled.css?delay=200&isdisabled",
@@ -1341,7 +1345,8 @@
             "mimeType": "text/css",
             "resourceType": "Stylesheet",
             "priority": "VeryHigh",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.css?delay=3000&capped",
@@ -1357,7 +1362,8 @@
             "mimeType": "text/css",
             "resourceType": "Stylesheet",
             "priority": "VeryHigh",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.css?delay=2000&async=true",
@@ -1374,7 +1380,8 @@
             "resourceType": "Stylesheet",
             "priority": "VeryHigh",
             "isLinkPreload": true,
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.css?delay=3000&async=true",
@@ -1390,7 +1397,8 @@
             "mimeType": "text/css",
             "resourceType": "Stylesheet",
             "priority": "VeryHigh",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.js",
@@ -1406,7 +1414,8 @@
             "mimeType": "application/javascript",
             "resourceType": "Script",
             "priority": "High",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/empty_module.js?delay=500",
@@ -1422,7 +1431,8 @@
             "mimeType": "application/javascript",
             "resourceType": "Script",
             "priority": "High",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/empty.css",
@@ -1438,7 +1448,8 @@
             "mimeType": "text/css",
             "resourceType": "Stylesheet",
             "priority": "VeryLow",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/fcp-delayer.js?delay=5000",
@@ -1454,7 +1465,8 @@
             "mimeType": "application/javascript",
             "resourceType": "Script",
             "priority": "High",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-480x318.jpg?iar1",
@@ -1470,7 +1482,8 @@
             "mimeType": "image/jpeg",
             "resourceType": "Image",
             "priority": "Low",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-480x318.jpg?isr1",
@@ -1486,7 +1499,8 @@
             "mimeType": "image/jpeg",
             "resourceType": "Image",
             "priority": "High",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-480x318.jpg?isr2",
@@ -1502,7 +1516,8 @@
             "mimeType": "image/jpeg",
             "resourceType": "Image",
             "priority": "High",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-480x318.jpg?isr3",
@@ -1518,7 +1533,8 @@
             "mimeType": "image/jpeg",
             "resourceType": "Image",
             "priority": "High",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-480x318.jpg",
@@ -1534,7 +1550,8 @@
             "mimeType": "image/jpeg",
             "resourceType": "Image",
             "priority": "High",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-rotating.gif",
@@ -1550,7 +1567,8 @@
             "mimeType": "image/gif",
             "resourceType": "Image",
             "priority": "Low",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/third_party/aggressive-promise-polyfill.js",
@@ -1566,7 +1584,8 @@
             "mimeType": "application/javascript",
             "resourceType": "Script",
             "priority": "Medium",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js",
@@ -1582,7 +1601,8 @@
             "mimeType": "text/javascript",
             "resourceType": "Script",
             "priority": "Medium",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "Google CDN"
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-480x318.jpg?iar2",
@@ -1598,7 +1618,8 @@
             "mimeType": "image/jpeg",
             "resourceType": "Image",
             "priority": "High",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.css?scriptActivated&delay=200",
@@ -1614,7 +1635,8 @@
             "mimeType": "text/css",
             "resourceType": "Stylesheet",
             "priority": "VeryHigh",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.html",
@@ -1630,7 +1652,8 @@
             "mimeType": "text/html",
             "resourceType": "XHR",
             "priority": "VeryHigh",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "blob:http://localhost:10200/3f2bc9df-684b-4541-837c-1590152ef65d",
@@ -1678,7 +1701,8 @@
             "mimeType": "image/vnd.microsoft.icon",
             "resourceType": "Other",
             "priority": "High",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-1024x680.jpg?lcp&redirect=lighthouse-1024x680.jpg%3Fredirected-lcp",
@@ -1693,7 +1717,8 @@
             "statusCode": 302,
             "mimeType": "",
             "priority": "High",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-1024x680.jpg?redirected-lcp",
@@ -1709,7 +1734,8 @@
             "mimeType": "image/jpeg",
             "resourceType": "Image",
             "priority": "High",
-            "experimentalFromMainFrame": true
+            "experimentalFromMainFrame": true,
+            "entity": "localhost"
           }
         ],
         "debugData": {
@@ -3254,6 +3280,18 @@
       "score": null,
       "scoreDisplayMode": "notApplicable"
     },
+    "html-xml-lang-mismatch": {
+      "id": "html-xml-lang-mismatch",
+      "title": "`<html>` element has an `[xml:lang]` attribute with the same base language as the `[lang]` attribute.",
+      "description": "If the webpage does not specify a consistent language, then the screen reader might not announce the page's text correctly. [Learn more about the `lang` attribute](https://dequeuniversity.com/rules/axe/4.7/html-xml-lang-mismatch).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [],
+        "items": []
+      }
+    },
     "image-alt": {
       "id": "image-alt",
       "title": "Image elements do not have `[alt]` attributes",
@@ -3459,6 +3497,13 @@
           ]
         }
       }
+    },
+    "input-button-name": {
+      "id": "input-button-name",
+      "title": "Input buttons have discernible text.",
+      "description": "Adding discernable and accessible text to input buttons may help screen reader users understand the purpose of the input button. [Learn more about input buttons](https://dequeuniversity.com/rules/axe/4.7/input-button-name).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
     },
     "input-image-alt": {
       "id": "input-image-alt",
@@ -3745,6 +3790,18 @@
       "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about the `tabindex` attribute](https://dequeuniversity.com/rules/axe/4.7/tabindex).",
       "score": null,
       "scoreDisplayMode": "notApplicable"
+    },
+    "table-fake-caption": {
+      "id": "table-fake-caption",
+      "title": "Tables use `<caption>` instead of cells with the `[colspan]` attribute to indicate a caption.",
+      "description": "Screen readers have features to make navigating tables easier. Ensuring that tables use the actual caption element instead of cells with the `[colspan]` attribute may improve the experience for screen reader users. [Learn more about captions](https://dequeuniversity.com/rules/axe/4.7/table-fake-caption).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [],
+        "items": []
+      }
     },
     "td-has-header": {
       "id": "td-has-header",
@@ -4211,7 +4268,7 @@
       "id": "unminified-javascript",
       "title": "Minify JavaScript",
       "description": "Minifying JavaScript files can reduce payload sizes and script parse time. [Learn how to minify JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/).",
-      "score": 0.45,
+      "score": 0.43,
       "scoreDisplayMode": "numeric",
       "numericValue": 1200,
       "numericUnit": "millisecond",
@@ -4275,7 +4332,7 @@
       "id": "unused-javascript",
       "title": "Reduce unused JavaScript",
       "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/).",
-      "score": 0.5,
+      "score": 0.56,
       "scoreDisplayMode": "numeric",
       "numericValue": 750,
       "numericUnit": "millisecond",
@@ -4334,7 +4391,7 @@
       "id": "modern-image-formats",
       "title": "Serve images in next-gen formats",
       "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/).",
-      "score": 0.67,
+      "score": 0.69,
       "scoreDisplayMode": "numeric",
       "numericValue": 450,
       "numericUnit": "millisecond",
@@ -4462,7 +4519,7 @@
       "id": "uses-text-compression",
       "title": "Enable text compression",
       "description": "Text-based resources should be served with compression (gzip, deflate or brotli) to minimize total network bytes. [Learn more about text compression](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/).",
-      "score": 0.31,
+      "score": 0.25,
       "scoreDisplayMode": "numeric",
       "numericValue": 2400,
       "numericUnit": "millisecond",
@@ -4591,7 +4648,7 @@
       "id": "legacy-javascript",
       "title": "Avoid serving legacy JavaScript to modern browsers",
       "description": "Polyfills and transforms enable legacy browsers to use new JavaScript features. However, many aren't necessary for modern browsers. For your bundled JavaScript, adopt a modern script deployment strategy using module/nomodule feature detection to reduce the amount of code shipped to modern browsers, while retaining support for legacy browsers. [Learn how to use modern JavaScript](https://web.dev/publish-modern-javascript/)",
-      "score": 0.67,
+      "score": 0.69,
       "scoreDisplayMode": "numeric",
       "numericValue": 450,
       "numericUnit": "millisecond",
@@ -5970,8 +6027,18 @@
           "group": "a11y-language"
         },
         {
+          "id": "html-xml-lang-mismatch",
+          "weight": 2,
+          "group": "a11y-language"
+        },
+        {
           "id": "image-alt",
           "weight": 10,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "input-button-name",
+          "weight": 0,
           "group": "a11y-names-labels"
         },
         {
@@ -6018,6 +6085,11 @@
           "id": "tabindex",
           "weight": 0,
           "group": "a11y-navigation"
+        },
+        {
+          "id": "table-fake-caption",
+          "weight": 3,
+          "group": "a11y-tables-lists"
         },
         {
           "id": "td-has-header",
@@ -6086,7 +6158,7 @@
         }
       ],
       "id": "accessibility",
-      "score": 0.79
+      "score": 0.8
     },
     "best-practices": {
       "title": "Best Practices",
@@ -7829,6 +7901,12 @@
       },
       {
         "startTime": 0,
+        "name": "lh:computed:EntityClassification",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
         "name": "lh:audit:network-rtt",
         "duration": 100,
         "entryType": "measure"
@@ -7896,12 +7974,6 @@
       {
         "startTime": 0,
         "name": "lh:computed:ResourceSummary",
-        "duration": 100,
-        "entryType": "measure"
-      },
-      {
-        "startTime": 0,
-        "name": "lh:computed:EntityClassification",
         "duration": 100,
         "entryType": "measure"
       },
@@ -8303,7 +8375,19 @@
       },
       {
         "startTime": 0,
+        "name": "lh:audit:html-xml-lang-mismatch",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
         "name": "lh:audit:image-alt",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:audit:input-button-name",
         "duration": 100,
         "entryType": "measure"
       },
@@ -8358,6 +8442,12 @@
       {
         "startTime": 0,
         "name": "lh:audit:tabindex",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:audit:table-fake-caption",
         "duration": 100,
         "entryType": "measure"
       },
@@ -9690,11 +9780,23 @@
       "core/audits/accessibility/html-lang-valid.js | description": [
         "audits[html-lang-valid].description"
       ],
+      "core/audits/accessibility/html-xml-lang-mismatch.js | title": [
+        "audits[html-xml-lang-mismatch].title"
+      ],
+      "core/audits/accessibility/html-xml-lang-mismatch.js | description": [
+        "audits[html-xml-lang-mismatch].description"
+      ],
       "core/audits/accessibility/image-alt.js | failureTitle": [
         "audits[image-alt].title"
       ],
       "core/audits/accessibility/image-alt.js | description": [
         "audits[image-alt].description"
+      ],
+      "core/audits/accessibility/input-button-name.js | title": [
+        "audits[input-button-name].title"
+      ],
+      "core/audits/accessibility/input-button-name.js | description": [
+        "audits[input-button-name].description"
       ],
       "core/audits/accessibility/input-image-alt.js | title": [
         "audits[input-image-alt].title"
@@ -9749,6 +9851,12 @@
       ],
       "core/audits/accessibility/tabindex.js | description": [
         "audits.tabindex.description"
+      ],
+      "core/audits/accessibility/table-fake-caption.js | title": [
+        "audits[table-fake-caption].title"
+      ],
+      "core/audits/accessibility/table-fake-caption.js | description": [
+        "audits[table-fake-caption].description"
       ],
       "core/audits/accessibility/td-has-header.js | title": [
         "audits[td-has-header].title"

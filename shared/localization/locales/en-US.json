@@ -272,6 +272,15 @@
   "core/audits/accessibility/html-lang-valid.js | title": {
     "message": "`<html>` element has a valid value for its `[lang]` attribute"
   },
+  "core/audits/accessibility/html-xml-lang-mismatch.js | description": {
+    "message": "If the webpage does not specify a consistent language, then the screen reader might not announce the page's text correctly. [Learn more about the `lang` attribute](https://dequeuniversity.com/rules/axe/4.7/html-xml-lang-mismatch)."
+  },
+  "core/audits/accessibility/html-xml-lang-mismatch.js | failureTitle": {
+    "message": "`<html>` element does not have an `[xml:lang]` attribute with the same base language as the `[lang]` attribute."
+  },
+  "core/audits/accessibility/html-xml-lang-mismatch.js | title": {
+    "message": "`<html>` element has an `[xml:lang]` attribute with the same base language as the `[lang]` attribute."
+  },
   "core/audits/accessibility/image-alt.js | description": {
     "message": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about the `alt` attribute](https://dequeuniversity.com/rules/axe/4.7/image-alt)."
   },
@@ -280,6 +289,15 @@
   },
   "core/audits/accessibility/image-alt.js | title": {
     "message": "Image elements have `[alt]` attributes"
+  },
+  "core/audits/accessibility/input-button-name.js | description": {
+    "message": "Adding discernable and accessible text to input buttons may help screen reader users understand the purpose of the input button. [Learn more about input buttons](https://dequeuniversity.com/rules/axe/4.7/input-button-name)."
+  },
+  "core/audits/accessibility/input-button-name.js | failureTitle": {
+    "message": "Input buttons do not have discernible text."
+  },
+  "core/audits/accessibility/input-button-name.js | title": {
+    "message": "Input buttons have discernible text."
   },
   "core/audits/accessibility/input-image-alt.js | description": {
     "message": "When an image is being used as an `<input>` button, providing alternative text can help screen reader users understand the purpose of the button. [Learn about input image alt text](https://dequeuniversity.com/rules/axe/4.7/input-image-alt)."
@@ -361,6 +379,15 @@
   },
   "core/audits/accessibility/tabindex.js | title": {
     "message": "No element has a `[tabindex]` value greater than 0"
+  },
+  "core/audits/accessibility/table-fake-caption.js | description": {
+    "message": "Screen readers have features to make navigating tables easier. Ensuring that tables use the actual caption element instead of cells with the `[colspan]` attribute may improve the experience for screen reader users. [Learn more about captions](https://dequeuniversity.com/rules/axe/4.7/table-fake-caption)."
+  },
+  "core/audits/accessibility/table-fake-caption.js | failureTitle": {
+    "message": "Tables do not use `<caption>` instead of cells with the `[colspan]` attribute to indicate a caption."
+  },
+  "core/audits/accessibility/table-fake-caption.js | title": {
+    "message": "Tables use `<caption>` instead of cells with the `[colspan]` attribute to indicate a caption."
   },
   "core/audits/accessibility/td-has-header.js | description": {
     "message": "Screen readers have features to make navigating tables easier. Ensuring that `<td>` elements in a large table (3 or more cells in width and height) have an associated table header may improve the experience for screen reader users. [Learn more about table headers](https://dequeuniversity.com/rules/axe/4.7/td-has-header)."
