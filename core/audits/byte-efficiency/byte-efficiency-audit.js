@@ -106,9 +106,7 @@ class ByteEfficiencyAudit extends Audit {
    */
   static async audit(artifacts, context) {
     const gatherContext = artifacts.GatherContext;
-    const trace = artifacts.traces[Audit.DEFAULT_PASS];
     const devtoolsLog = artifacts.devtoolsLogs[Audit.DEFAULT_PASS];
-    const URL = artifacts.URL;
     const settings = context?.settings || {};
     const simulatorOptions = {
       devtoolsLog,
@@ -129,24 +127,12 @@ class ByteEfficiencyAudit extends Audit {
 
     const metricComputationInput = Audit.makeMetricComputationDataInput(artifacts, context);
 
-    const [result, graph, fcpGraph, lcpGraph, simulator] = await Promise.all([
+    const [result, simulator] = await Promise.all([
       this.audit_(artifacts, networkRecords, context),
-      // Page dependency graph is only used in navigation mode.
-      gatherContext.gatherMode === 'navigation' ?
-        PageDependencyGraph.request({trace, devtoolsLog, URL}, context) :
-        null,
-      gatherContext.gatherMode === 'navigation' ?
-        // eslint-disable-next-line max-len
-        LanternFirstContentfulPaint.request(metricComputationInput, context).then(r => r.pessimisticGraph) :
-        null,
-      gatherContext.gatherMode === 'navigation' ?
-        // eslint-disable-next-line max-len
-        LanternLargestContentfulPaint.request(metricComputationInput, context).then(r => r.pessimisticGraph) :
-        null,
       LoadSimulator.request(simulatorOptions, context),
     ]);
 
-    return this.createAuditProduct(result, graph, fcpGraph, lcpGraph, simulator, gatherContext);
+    return this.createAuditProduct(result, simulator, metricComputationInput, context);
   }
 
   /**
@@ -239,14 +225,12 @@ class ByteEfficiencyAudit extends Audit {
 
   /**
    * @param {ByteEfficiencyProduct} result
-   * @param {Node|null} graph
-   * @param {Node|null} fcpGraph
-   * @param {Node|null} lcpGraph
    * @param {Simulator} simulator
-   * @param {LH.Artifacts['GatherContext']} gatherContext
-   * @return {LH.Audit.Product}
+   * @param {LH.Artifacts.MetricComputationDataInput} metricComputationInput
+   * @param {LH.Audit.Context} context
+   * @return {Promise<LH.Audit.Product>}
    */
-  static createAuditProduct(result, graph, fcpGraph, lcpGraph, simulator, gatherContext) {
+  static async createAuditProduct(result, simulator, metricComputationInput, context) {
     const results = result.items.sort((itemA, itemB) => itemB.wastedBytes - itemA.wastedBytes);
 
     const wastedBytes = results.reduce((sum, item) => sum + item.wastedBytes, 0);
@@ -260,23 +244,31 @@ class ByteEfficiencyAudit extends Audit {
     // `wastedMs` may be negative, if making the opportunity change could be detrimental.
     // This is useful information in the LHR and should be preserved.
     let wastedMs;
-    if (gatherContext.gatherMode === 'navigation') {
-      if (!graph) throw Error('Page dependency graph should always be computed in navigation mode');
-      if (!fcpGraph) throw new Error('FCP graph should always be computed in navigation mode');
-      if (!lcpGraph) throw new Error('LCP graph should always be computed in navigation mode');
+    if (metricComputationInput.gatherContext.gatherMode === 'navigation') {
+      const graph = await PageDependencyGraph.request(metricComputationInput, context);
+      const {
+        pessimisticGraph: pessimisticFCPGraph,
+      } = await LanternFirstContentfulPaint.request(metricComputationInput, context);
+      const {
+        pessimisticGraph: pessimisticLCPGraph,
+      } = await LanternLargestContentfulPaint.request(metricComputationInput, context);
 
       wastedMs = this.computeWasteWithTTIGraph(results, graph, simulator, {
         providedWastedBytesByUrl: result.wastedBytesByUrl,
       });
 
-      const {savings: fcpSavings} = this.computeWasteWithGraph(results, fcpGraph, simulator, {
-        providedWastedBytesByUrl: result.wastedBytesByUrl,
-        label: 'fcp',
-      });
-      const {savings: lcpSavings} = this.computeWasteWithGraph(results, lcpGraph, simulator, {
-        providedWastedBytesByUrl: result.wastedBytesByUrl,
-        label: 'lcp',
-      });
+      const {savings: fcpSavings} = this.computeWasteWithGraph(
+        results,
+        pessimisticFCPGraph,
+        simulator,
+        {providedWastedBytesByUrl: result.wastedBytesByUrl, label: 'fcp'}
+      );
+      const {savings: lcpSavings} = this.computeWasteWithGraph(
+        results,
+        pessimisticLCPGraph,
+        simulator,
+        {providedWastedBytesByUrl: result.wastedBytesByUrl, label: 'lcp'}
+      );
 
       metricSavings.FCP = fcpSavings;
       metricSavings.LCP = lcpSavings;
