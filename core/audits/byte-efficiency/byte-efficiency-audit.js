@@ -12,6 +12,8 @@ import {LoadSimulator} from '../../computed/load-simulator.js';
 import {PageDependencyGraph} from '../../computed/page-dependency-graph.js';
 import {LanternLargestContentfulPaint} from '../../computed/metrics/lantern-largest-contentful-paint.js';
 import {LanternFirstContentfulPaint} from '../../computed/metrics/lantern-first-contentful-paint.js';
+import {LCPImageRecord} from '../../computed/lcp-image-record.js';
+import {LCPBreakdown} from '../../computed/metrics/lcp-breakdown.js';
 
 const str_ = i18n.createIcuMessageFn(import.meta.url, {});
 
@@ -263,15 +265,26 @@ class ByteEfficiencyAudit extends Audit {
         simulator,
         {providedWastedBytesByUrl: result.wastedBytesByUrl, label: 'fcp'}
       );
-      const {savings: lcpSavings} = this.computeWasteWithGraph(
+      const {savings: lcpGraphSavings} = this.computeWasteWithGraph(
         results,
         pessimisticLCPGraph,
         simulator,
         {providedWastedBytesByUrl: result.wastedBytesByUrl, label: 'lcp'}
       );
 
+      let lcpRecordSavings = 0;
+      const lcpRecord = await LCPImageRecord.request(metricComputationInput, context);
+      const lcpBreakdown = await LCPBreakdown.request(metricComputationInput, context);
+      if (lcpRecord && lcpBreakdown.loadStart && lcpBreakdown.loadEnd) {
+        const lcpResult = results.find(result => result.url === lcpRecord.url);
+        if (lcpResult) {
+          const lcpLoadTime = lcpBreakdown.loadEnd - lcpBreakdown.loadStart;
+          lcpRecordSavings = Math.round(lcpLoadTime * lcpResult.wastedBytes / lcpResult.totalBytes);
+        }
+      }
+
       metricSavings.FCP = fcpSavings;
-      metricSavings.LCP = lcpSavings;
+      metricSavings.LCP = Math.max(lcpGraphSavings, lcpRecordSavings);
     } else {
       wastedMs = simulator.computeWastedMsFromWastedBytes(wastedBytes);
     }
