@@ -272,6 +272,7 @@ class ByteEfficiencyAudit extends Audit {
         {providedWastedBytesByUrl: result.wastedBytesByUrl, label: 'lcp'}
       );
 
+      // The LCP graph can underestimate the LCP savings if there is potential savings on the LCP record itself.
       let lcpRecordSavings = 0;
       const lcpRecord = await LCPImageRecord.request(metricComputationInput, context);
       const lcpBreakdown = await LCPBreakdown.request(metricComputationInput, context);
