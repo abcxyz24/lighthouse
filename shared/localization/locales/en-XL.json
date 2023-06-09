@@ -26,6 +26,15 @@
   "core/audits/accessibility/aria-command-name.js | title": {
     "message": "`button`, `link`, âńd̂ `menuitem` él̂ém̂én̂t́ŝ h́âv́ê áĉćêśŝíb̂ĺê ńâḿêś"
   },
+  "core/audits/accessibility/aria-dialog-name.js | description": {
+    "message": "ÂŔÎÁ d̂íâĺôǵ êĺêḿêńt̂ś ŵít̂h́ôút̂ án̂ áĉćêśŝíb̂ĺê ńâḿê ḿâý p̂ŕêv́êńt̂ śĉŕêén̂ ŕêád̂ér̂ś ûśêŕŝ f́r̂óm̂ d́îśĉér̂ńîńĝ t́ĥé p̂úr̂ṕôśê óf̂ t́ĥéŝé êĺêḿêńt̂ś. [L̂éâŕn̂ h́ôẃ t̂ó m̂ák̂é ÂŔÎÁ d̂íâĺôǵ êĺêḿêńt̂ś m̂ór̂é âćĉéŝśîb́l̂é](https://dequeuniversity.com/rules/axe/4.7/aria-dialog-name)."
+  },
+  "core/audits/accessibility/aria-dialog-name.js | failureTitle": {
+    "message": "Êĺêḿêńt̂ś ŵít̂h́ `role=\"dialog\"` ôŕ `role=\"alertdialog\"` d̂ó n̂ót̂ h́âv́ê áĉćêśŝíb̂ĺê ńâḿêś."
+  },
+  "core/audits/accessibility/aria-dialog-name.js | title": {
+    "message": "Êĺêḿêńt̂ś ŵít̂h́ `role=\"dialog\"` ôŕ `role=\"alertdialog\"` ĥáv̂é âćĉéŝśîb́l̂é n̂ám̂éŝ."
+  },
   "core/audits/accessibility/aria-hidden-body.js | description": {
     "message": "Âśŝíŝt́îv́ê t́êćĥńôĺôǵîéŝ, ĺîḱê śĉŕêén̂ ŕêád̂ér̂ś, ŵór̂ḱ îńĉón̂śîśt̂én̂t́l̂ý ŵh́êń `aria-hidden=\"true\"` îś ŝét̂ ón̂ t́ĥé d̂óĉúm̂én̂t́ `<body>`. [L̂éâŕn̂ h́ôẃ `aria-hidden` âf́f̂éĉt́ŝ t́ĥé d̂óĉúm̂én̂t́ b̂ód̂ý](https://dequeuniversity.com/rules/axe/4.7/aria-hidden-body)."
   },

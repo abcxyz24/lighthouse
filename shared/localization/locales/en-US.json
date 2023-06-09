@@ -26,6 +26,15 @@
   "core/audits/accessibility/aria-command-name.js | title": {
     "message": "`button`, `link`, and `menuitem` elements have accessible names"
   },
+  "core/audits/accessibility/aria-dialog-name.js | description": {
+    "message": "ARIA dialog elements without an accessible name may prevent screen readers users from discerning the purpose of these elements. [Learn how to make ARIA dialog elements more accessible](https://dequeuniversity.com/rules/axe/4.7/aria-dialog-name)."
+  },
+  "core/audits/accessibility/aria-dialog-name.js | failureTitle": {
+    "message": "Elements with `role=\"dialog\"` or `role=\"alertdialog\"` do not have accessible names."
+  },
+  "core/audits/accessibility/aria-dialog-name.js | title": {
+    "message": "Elements with `role=\"dialog\"` or `role=\"alertdialog\"` have accessible names."
+  },
   "core/audits/accessibility/aria-hidden-body.js | description": {
     "message": "Assistive technologies, like screen readers, work inconsistently when `aria-hidden=\"true\"` is set on the document `<body>`. [Learn how `aria-hidden` affects the document body](https://dequeuniversity.com/rules/axe/4.7/aria-hidden-body)."
   },

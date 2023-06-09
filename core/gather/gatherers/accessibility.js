@@ -41,6 +41,7 @@ async function runA11yChecks() {
       // Consider http://go/prcpg for expert review of the aXe rules.
       'accesskeys': {enabled: true},
       'area-alt': {enabled: false},
+      'aria-dialog-name': {enabled: true},
       'aria-roledescription': {enabled: false},
       'aria-treeitem-name': {enabled: true},
       'audio-caption': {enabled: false},
