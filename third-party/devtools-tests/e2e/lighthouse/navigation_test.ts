@@ -133,7 +133,7 @@ describe.skipOnParallel('Navigation', async function() {
         });
 
         const {auditResults, erroredAudits, failedAudits} = getAuditsBreakdown(lhr);
-        assert.strictEqual(auditResults.length, 180);
+        assert.strictEqual(auditResults.length, 181);
         assert.deepStrictEqual(erroredAudits, []);
         assert.deepStrictEqual(failedAudits.map(audit => audit.id), [
           'service-worker',
@@ -222,7 +222,7 @@ describe.skipOnParallel('Navigation', async function() {
         ];
 
         const {auditResults, erroredAudits, failedAudits} = getAuditsBreakdown(lhr, flakyAudits);
-        assert.strictEqual(auditResults.length, 157);
+        assert.strictEqual(auditResults.length, 158);
         assert.deepStrictEqual(erroredAudits, []);
         assert.deepStrictEqual(failedAudits.map(audit => audit.id), [
           'service-worker',

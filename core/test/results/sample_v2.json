@@ -3083,6 +3083,18 @@
         "items": []
       }
     },
+    "aria-text": {
+      "id": "aria-text",
+      "title": "Elements with the `role=text` attribute do not have focusable descendents.",
+      "description": "Adding `role=text` around a text node split by markup enables VoiceOver to treat it as one phrase, but all the element's descedents will be treated as text nodes. The focusable descendents would not be announced, which is a worse experience for users. [Learn more about the `role=text` attribute](https://dequeuniversity.com/rules/axe/4.7/aria-text).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [],
+        "items": []
+      }
+    },
     "aria-toggle-field-name": {
       "id": "aria-toggle-field-name",
       "title": "ARIA toggle fields have accessible names",
@@ -5970,6 +5982,11 @@
           "group": "a11y-aria"
         },
         {
+          "id": "aria-text",
+          "weight": 3,
+          "group": "a11y-aria"
+        },
+        {
           "id": "aria-toggle-field-name",
           "weight": 0,
           "group": "a11y-aria"
@@ -6201,7 +6218,7 @@
         }
       ],
       "id": "accessibility",
-      "score": 0.8
+      "score": 0.81
     },
     "best-practices": {
       "title": "Best Practices",
@@ -8316,6 +8333,12 @@
       },
       {
         "startTime": 0,
+        "name": "lh:audit:aria-text",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
         "name": "lh:audit:aria-toggle-field-name",
         "duration": 100,
         "entryType": "measure"
@@ -9730,6 +9753,12 @@
       ],
       "core/audits/accessibility/aria-roles.js | description": [
         "audits[aria-roles].description"
+      ],
+      "core/audits/accessibility/aria-text.js | title": [
+        "audits[aria-text].title"
+      ],
+      "core/audits/accessibility/aria-text.js | description": [
+        "audits[aria-text].description"
       ],
       "core/audits/accessibility/aria-toggle-field-name.js | title": [
         "audits[aria-toggle-field-name].title"

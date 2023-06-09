@@ -258,6 +258,22 @@ const expectations = {
           ],
         },
       },
+      'aria-text': {
+        score: 0,
+        details: {
+          items: [
+            {
+              node: {
+                'type': 'node',
+                'selector': 'body > section > span#aria-text',
+                'snippet': '<span role="text" id="aria-text">',
+                'explanation': 'Fix any of the following:\n  Element has focusable descendants',
+                'nodeLabel': 'Not announced',
+              },
+            },
+          ],
+        },
+      },
       'aria-toggle-field-name': {
         score: 0,
         details: {
@@ -285,7 +301,7 @@ const expectations = {
               node: {
                 'type': 'node',
                 'selector': 'body > section > div#aria-valid-attr',
-                'path': '2,HTML,1,BODY,29,SECTION,0,DIV',
+                'path': '2,HTML,1,BODY,31,SECTION,0,DIV',
                 'snippet': '<div id="aria-valid-attr" role="checkbox" aria-chked="true">',
                 'nodeLabel': 'body > section > div#aria-valid-attr',
               },
@@ -294,7 +310,7 @@ const expectations = {
               node: {
                 'type': 'node',
                 'selector': 'body > section > div#aria-valid-attr-value',
-                'path': '2,HTML,1,BODY,31,SECTION,0,DIV',
+                'path': '2,HTML,1,BODY,33,SECTION,0,DIV',
                 'snippet': '<div id="aria-valid-attr-value" role="checkbox" aria-checked="0">',
                 'nodeLabel': 'body > section > div#aria-valid-attr-value',
               },
@@ -428,7 +444,7 @@ const expectations = {
               node: {
                 'type': 'node',
                 'selector': 'body > section > textarea#duplicate-id-active',
-                'path': '2,HTML,1,BODY,41,SECTION,0,TEXTAREA',
+                'path': '2,HTML,1,BODY,43,SECTION,0,TEXTAREA',
                 'snippet': '<textarea id="duplicate-id-active" aria-label="text1">',
                 'explanation': 'Fix any of the following:\n  Document has active elements with the same id attribute: duplicate-id-active',
                 'nodeLabel': 'text1',
@@ -439,7 +455,7 @@ const expectations = {
                   {
                     relatedNode: {
                       'type': 'node',
-                      'path': '2,HTML,1,BODY,41,SECTION,1,TEXTAREA',
+                      'path': '2,HTML,1,BODY,43,SECTION,1,TEXTAREA',
                       'selector': 'body > section > textarea#duplicate-id-active',
                       'snippet': '<textarea id="duplicate-id-active" aria-label="text2">',
                       'nodeLabel': 'text2',
@@ -459,7 +475,7 @@ const expectations = {
               node: {
                 'type': 'node',
                 'selector': 'body > section > div#duplicate-id-aria',
-                'path': '2,HTML,1,BODY,43,SECTION,0,DIV',
+                'path': '2,HTML,1,BODY,45,SECTION,0,DIV',
                 'snippet': '<div id="duplicate-id-aria" class="duplicate-id-aria">',
                 'explanation': 'Fix any of the following:\n  Document has multiple elements referenced with ARIA with the same id attribute: duplicate-id-aria',
                 'nodeLabel': 'body > section > div#duplicate-id-aria',
@@ -470,7 +486,7 @@ const expectations = {
                   {
                     relatedNode: {
                       'type': 'node',
-                      'path': '2,HTML,1,BODY,43,SECTION,0,DIV,0,DIV',
+                      'path': '2,HTML,1,BODY,45,SECTION,0,DIV,0,DIV',
                       'selector': 'body > section > div#duplicate-id-aria > div#duplicate-id-aria',
                       'snippet': '<div id="duplicate-id-aria">',
                       'nodeLabel': 'body > section > div#duplicate-id-aria > div#duplicate-id-aria',
@@ -491,7 +507,7 @@ const expectations = {
               node: {
                 'type': 'node',
                 'selector': 'body > section > input#form-field-multiple-labels',
-                'path': '2,HTML,1,BODY,45,SECTION,2,INPUT',
+                'path': '2,HTML,1,BODY,47,SECTION,2,INPUT',
                 'snippet': '<input type="checkbox" id="form-field-multiple-labels">',
                 'explanation': 'Fix all of the following:\n  Multiple label elements is not widely supported in assistive technologies. Ensure the first label contains all necessary information.',
                 'nodeLabel': 'body > section > input#form-field-multiple-labels',
@@ -502,7 +518,7 @@ const expectations = {
                   {
                     relatedNode: {
                       'type': 'node',
-                      'path': '2,HTML,1,BODY,45,SECTION,0,LABEL',
+                      'path': '2,HTML,1,BODY,47,SECTION,0,LABEL',
                       'selector': 'body > section > label#label1',
                       'snippet': '<label for="form-field-multiple-labels" id="label1">',
                       'nodeLabel': 'label1',
@@ -511,7 +527,7 @@ const expectations = {
                   {
                     relatedNode: {
                       'type': 'node',
-                      'path': '2,HTML,1,BODY,45,SECTION,1,LABEL',
+                      'path': '2,HTML,1,BODY,47,SECTION,1,LABEL',
                       'selector': 'body > section > label',
                       'snippet': '<label for="form-field-multiple-labels">',
                       'nodeLabel': 'label2',
@@ -547,7 +563,7 @@ const expectations = {
               node: {
                 'type': 'node',
                 'selector': 'body > section > h3',
-                'path': '2,HTML,1,BODY,49,SECTION,1,H3',
+                'path': '2,HTML,1,BODY,51,SECTION,1,H3',
                 'snippet': '<h3>',
                 'explanation': 'Fix any of the following:\n  Heading order invalid',
                 'nodeLabel': 'sub-sub-header',

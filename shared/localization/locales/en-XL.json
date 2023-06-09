@@ -116,6 +116,15 @@
   "core/audits/accessibility/aria-roles.js | title": {
     "message": "`[role]` v̂ál̂úêś âŕê v́âĺîd́"
   },
+  "core/audits/accessibility/aria-text.js | description": {
+    "message": "Âd́d̂ín̂ǵ `role=text` âŕôún̂d́ â t́êx́t̂ ńôd́ê śp̂ĺît́ b̂ý m̂ár̂ḱûṕ êńâb́l̂éŝ V́ôíĉéÔv́êŕ t̂ó t̂ŕêát̂ ít̂ áŝ ón̂é p̂h́r̂áŝé, b̂út̂ ál̂ĺ t̂h́ê él̂ém̂én̂t́'ŝ d́êśĉéd̂én̂t́ŝ ẃîĺl̂ b́ê t́r̂éât́êd́ âś t̂éx̂t́ n̂ód̂éŝ. T́ĥé f̂óĉúŝáb̂ĺê d́êśĉén̂d́êńt̂ś ŵóûĺd̂ ńôt́ b̂é âńn̂óûńĉéd̂, ẃĥíĉh́ îś â ẃôŕŝé êx́p̂ér̂íêńĉé f̂ór̂ úŝér̂ś. [L̂éâŕn̂ ḿôŕê áb̂óût́ t̂h́ê `role=text` át̂t́r̂íb̂út̂é](https://dequeuniversity.com/rules/axe/4.7/aria-text)."
+  },
+  "core/audits/accessibility/aria-text.js | failureTitle": {
+    "message": "Êĺêḿêńt̂ś ŵít̂h́ t̂h́ê `role=text` át̂t́r̂íb̂út̂é d̂ó ĥáv̂é f̂óĉúŝáb̂ĺê d́êśĉén̂d́êńt̂ś."
+  },
+  "core/audits/accessibility/aria-text.js | title": {
+    "message": "Êĺêḿêńt̂ś ŵít̂h́ t̂h́ê `role=text` át̂t́r̂íb̂út̂é d̂ó n̂ót̂ h́âv́ê f́ôćûśâb́l̂é d̂éŝćêńd̂én̂t́ŝ."
+  },
   "core/audits/accessibility/aria-toggle-field-name.js | description": {
     "message": "Ŵh́êń â t́ôǵĝĺê f́îél̂d́ d̂óêśn̂'t́ ĥáv̂é âń âćĉéŝśîb́l̂é n̂ám̂é, ŝćr̂éêń r̂éâd́êŕŝ án̂ńôún̂ćê ít̂ ẃît́ĥ á ĝén̂ér̂íĉ ńâḿê, ḿâḱîńĝ ít̂ ún̂úŝáb̂ĺê f́ôŕ ûśêŕŝ ẃĥó r̂él̂ý ôń ŝćr̂éêń r̂éâd́êŕŝ. [Ĺêár̂ń m̂ór̂é âb́ôút̂ t́ôǵĝĺê f́îél̂d́ŝ](https://dequeuniversity.com/rules/axe/4.7/aria-toggle-field-name)."
   },

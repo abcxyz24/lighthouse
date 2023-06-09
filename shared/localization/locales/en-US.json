@@ -116,6 +116,15 @@
   "core/audits/accessibility/aria-roles.js | title": {
     "message": "`[role]` values are valid"
   },
+  "core/audits/accessibility/aria-text.js | description": {
+    "message": "Adding `role=text` around a text node split by markup enables VoiceOver to treat it as one phrase, but all the element's descedents will be treated as text nodes. The focusable descendents would not be announced, which is a worse experience for users. [Learn more about the `role=text` attribute](https://dequeuniversity.com/rules/axe/4.7/aria-text)."
+  },
+  "core/audits/accessibility/aria-text.js | failureTitle": {
+    "message": "Elements with the `role=text` attribute do have focusable descendents."
+  },
+  "core/audits/accessibility/aria-text.js | title": {
+    "message": "Elements with the `role=text` attribute do not have focusable descendents."
+  },
   "core/audits/accessibility/aria-toggle-field-name.js | description": {
     "message": "When a toggle field doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about toggle fields](https://dequeuniversity.com/rules/axe/4.7/aria-toggle-field-name)."
   },

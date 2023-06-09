@@ -44,6 +44,7 @@ async function runA11yChecks() {
       'aria-dialog-name': {enabled: true},
       'aria-roledescription': {enabled: false},
       'aria-treeitem-name': {enabled: true},
+      'aria-text': {enabled: true},
       'audio-caption': {enabled: false},
       'blink': {enabled: false},
       'duplicate-id': {enabled: false},
