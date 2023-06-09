@@ -48,6 +48,7 @@ Array [
   "navigatorUserAgentIssueDetails",
   "quirksModeIssueDetails",
   "sharedArrayBufferIssueDetails",
+  "stylesheetLoadingIssueDetails",
 ]
 `);
   });

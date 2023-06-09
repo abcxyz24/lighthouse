@@ -705,7 +705,7 @@ class TraceProcessor {
         return Boolean(
           evt.name === 'FrameCommittedInBrowser' &&
           evt.args.data?.frame &&
-          evt.args.data.url
+          evt.args.data.url !== undefined
         );
       }).forEach(evt => {
         framesById.set(evt.args.data.frame, {
