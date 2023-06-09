@@ -417,7 +417,6 @@ class Audit {
   }
 
   /**
-   *
    * @param {LH.Artifacts} artifacts
    * @param {LH.Audit.Context} context
    * @returns {LH.Artifacts.MetricComputationDataInput}
