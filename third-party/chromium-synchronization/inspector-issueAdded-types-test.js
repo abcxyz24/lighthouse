@@ -41,6 +41,7 @@ Array [
   "corsIssueDetails",
   "deprecationIssueDetails",
   "federatedAuthRequestIssueDetails",
+  "federatedAuthUserInfoRequestIssueDetails",
   "genericIssueDetails",
   "heavyAdIssueDetails",
   "lowTextContrastIssueDetails",

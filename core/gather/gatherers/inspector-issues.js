@@ -76,6 +76,7 @@ class InspectorIssues extends FRGatherer {
       cookieIssue: [],
       sharedArrayBufferIssue: [],
       stylesheetLoadingIssue: [],
+      federatedAuthUserInfoRequestIssue: [],
     };
     const keys = /** @type {Array<keyof LH.Artifacts['InspectorIssues']>} */(Object.keys(artifact));
     for (const key of keys) {
