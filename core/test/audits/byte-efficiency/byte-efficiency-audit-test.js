@@ -11,7 +11,7 @@ import {Simulator} from '../../../lib/dependency-graph/simulator/simulator.js';
 import {LoadSimulator} from '../../../computed/load-simulator.js';
 import {getURLArtifactFromDevtoolsLog, readJson} from '../../test-utils.js';
 import {networkRecordsToDevtoolsLog} from '../../network-records-to-devtools-log.js';
-import {createTestTrace} from '../../create-test-trace.js';
+import {createTestTrace, rootFrame} from '../../create-test-trace.js';
 import {defaultSettings} from '../../../config/constants.js';
 
 const trace = readJson('../../fixtures/traces/lcp-m78.json', import.meta);
@@ -29,22 +29,35 @@ describe('Byte efficiency base audit', () => {
 
   beforeEach(() => {
     const mainDocumentUrl = 'http://example.com/';
-    const lcpUrl = 'http://example.com/image.jpg';
     const devtoolsLog = networkRecordsToDevtoolsLog([
       {
         requestId: '1',
         url: mainDocumentUrl,
         protocol: 'http',
-        transferSize: 400000,
+        transferSize: 400_000,
         priority: 'VeryHigh',
+        resourceType: 'Document',
+        frameId: rootFrame,
         timing: {sendEnd: 0},
       },
       {
         requestId: '2',
-        url: lcpUrl,
+        url: 'http://example.com/script.js',
         protocol: 'http',
-        transferSize: 2000,
+        transferSize: 400_000,
         priority: 'High',
+        resourceType: 'Script',
+        frameId: rootFrame,
+        timing: {sendEnd: 0},
+      },
+      {
+        requestId: '3',
+        url: 'http://www.example.com/image.png',
+        protocol: 'http',
+        transferSize: 200_000,
+        priority: 'High',
+        resourceType: 'Image',
+        frameId: rootFrame,
         timing: {sendEnd: 0},
       },
     ]);
@@ -134,6 +147,32 @@ describe('Byte efficiency base audit', () => {
 
     // 900ms savings comes from the graph calculation
     assert.equal(result.numericValue, 900);
+  });
+
+  it('should estimate the FCP & LCP impact', async () => {
+    const result = await ByteEfficiencyAudit.createAuditProduct({
+      headings: baseHeadings,
+      items: [
+        {url: 'http://example.com/', wastedBytes: 200_000},
+        {url: 'http://example.com/script.js', wastedBytes: 100_000},
+      ],
+    }, simulator, metricComputationInput, {computedCache: new Map()});
+
+    assert.equal(result.metricSavings.FCP, 900);
+    assert.equal(result.metricSavings.LCP, 1350);
+  });
+
+  it('should use LCP request savings if larger than LCP graph savings', async () => {
+    const result = await ByteEfficiencyAudit.createAuditProduct({
+      headings: baseHeadings,
+      items: [
+        {url: 'http://example.com/', wastedBytes: 200_000},
+        {url: 'http://www.example.com/image.png', wastedBytes: 100_000, totalBytes: 200_000},
+      ],
+    }, simulator, metricComputationInput, {computedCache: new Map()});
+
+    assert.equal(result.metricSavings.FCP, 900);
+    assert.equal(result.metricSavings.LCP, 2660);
   });
 
   it('should score the wastedMs', async () => {
