@@ -300,7 +300,7 @@ class ByteEfficiencyAudit extends Audit {
       {overallSavingsMs: wastedMs, overallSavingsBytes: wastedBytes, sortedBy});
 
     // TODO: Remove from debug data once `metricSavings` is added to the LHR.
-    // For now we need to surface this somewhere for visibility and smoke tests.
+    // For now, add it to debug data for visibility.
     details.debugData = {
       type: 'debugdata',
       metricSavings,
