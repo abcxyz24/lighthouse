@@ -175,6 +175,12 @@ const expectations = {
           items: {
             length: 2,
           },
+          debugData: {
+            metricSavings: {
+              FCP: 0,
+              LCP: 0,
+            },
+          },
         },
       },
       'unminified-javascript': {
@@ -208,6 +214,12 @@ const expectations = {
               wastedPercent: '19 +/- 5',
             },
           ],
+          debugData: {
+            metricSavings: {
+              FCP: '>100',
+              LCP: '>100',
+            },
+          },
         },
       },
       'unused-css-rules': {
@@ -215,6 +227,12 @@ const expectations = {
           overallSavingsBytes: '>40000',
           items: {
             length: 2,
+          },
+          debugData: {
+            metricSavings: {
+              FCP: 0,
+              LCP: 0,
+            },
           },
         },
       },
@@ -250,6 +268,12 @@ const expectations = {
               },
             },
           ],
+          debugData: {
+            metricSavings: {
+              FCP: 0,
+              LCP: '>100',
+            },
+          },
         },
       },
       'offscreen-images': {
@@ -265,6 +289,12 @@ const expectations = {
               url: /large.svg$/,
             },
           ],
+          debugData: {
+            metricSavings: {
+              FCP: 0,
+              LCP: '>100',
+            },
+          },
         },
       },
       'modern-image-formats': {
@@ -278,6 +308,12 @@ const expectations = {
             {url: /lighthouse-480x320.jpg\?css/},
             {url: /lighthouse-480x320.jpg\?sprite/},
           ],
+          debugData: {
+            metricSavings: {
+              FCP: 0,
+              LCP: '>100',
+            },
+          },
         },
       },
       'uses-text-compression': {
@@ -290,6 +326,12 @@ const expectations = {
           items: {
             length: 3,
           },
+          debugData: {
+            metricSavings: {
+              FCP: '>100',
+              LCP: '>100',
+            },
+          },
         },
       },
       'uses-optimized-images': {
@@ -297,6 +339,12 @@ const expectations = {
           overallSavingsBytes: '>10000',
           items: {
             length: 1,
+          },
+          debugData: {
+            metricSavings: {
+              FCP: 0,
+              LCP: 0,
+            },
           },
         },
       },
@@ -311,6 +359,12 @@ const expectations = {
             {wastedPercent: '65 +/- 5', url: /lighthouse-480x320\.jpg\?attributesized/},
             {wastedPercent: '81 +/- 5', url: /lighthouse-480x320.webp/},
           ],
+          debugData: {
+            metricSavings: {
+              FCP: 0,
+              LCP: 0,
+            },
+          },
         },
       },
       // Checks that images aren't TOO SMALL.

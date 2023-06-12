@@ -299,6 +299,13 @@ class ByteEfficiencyAudit extends Audit {
     const details = Audit.makeOpportunityDetails(result.headings, results,
       {overallSavingsMs: wastedMs, overallSavingsBytes: wastedBytes, sortedBy});
 
+    // TODO: Remove from debug data once `metricSavings` is added to the LHR.
+    // For now we need to surface this somewhere for visibility and smoke tests.
+    details.debugData = {
+      type: 'debugdata',
+      metricSavings,
+    };
+
     return {
       explanation: result.explanation,
       warnings: result.warnings,
