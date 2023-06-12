@@ -65,7 +65,6 @@ class TimingSummary {
     const {
       cumulativeLayoutShift,
       cumulativeLayoutShiftMainFrame,
-      totalCumulativeLayoutShift,
     } = cumulativeLayoutShiftValues || {};
 
     /** @type {LH.Artifacts.TimingSummary} */
@@ -89,7 +88,6 @@ class TimingSummary {
       maxPotentialFID: maxPotentialFID?.timing,
       cumulativeLayoutShift,
       cumulativeLayoutShiftMainFrame,
-      totalCumulativeLayoutShift,
 
       lcpLoadStart: lcpBreakdown?.loadStart,
       lcpLoadEnd: lcpBreakdown?.loadEnd,
@@ -123,7 +121,6 @@ class TimingSummary {
       observedDomContentLoadedTs: processedNavigation?.timestamps.domContentLoaded,
       observedCumulativeLayoutShift: cumulativeLayoutShift,
       observedCumulativeLayoutShiftMainFrame: cumulativeLayoutShiftMainFrame,
-      observedTotalCumulativeLayoutShift: totalCumulativeLayoutShift,
 
       // Include some visual metrics from speedline
       observedFirstVisualChange: speedline.first,

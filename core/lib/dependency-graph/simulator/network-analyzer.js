@@ -139,14 +139,15 @@ class NetworkAnalyzer {
     const {timing, connectionReused, record} = info;
     if (connectionReused) return;
 
-    if (timing.connectEnd > 0 && timing.connectStart > 0 && record.protocol.startsWith('h3')) {
+    const {connectStart, sslStart, sslEnd, connectEnd} = timing;
+    if (connectEnd >= 0 && connectStart >= 0 && record.protocol.startsWith('h3')) {
       // These values are equal to sslStart and sslEnd for h3.
-      return timing.connectEnd - timing.connectStart;
-    } else if (timing.sslStart > 0 && timing.sslEnd > 0) {
+      return connectEnd - connectStart;
+    } else if (sslStart >= 0 && sslEnd >= 0 && sslStart !== connectStart) {
       // SSL can also be more than 1 RT but assume False Start was used.
-      return [timing.connectEnd - timing.sslStart, timing.sslStart - timing.connectStart];
-    } else if (timing.connectStart > 0 && timing.connectEnd > 0) {
-      return timing.connectEnd - timing.connectStart;
+      return [connectEnd - sslStart, sslStart - connectStart];
+    } else if (connectStart >= 0 && connectEnd >= 0) {
+      return connectEnd - connectStart;
     }
   }
 

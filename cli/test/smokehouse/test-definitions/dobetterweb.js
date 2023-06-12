@@ -574,6 +574,20 @@ const expectations = {
           },
         },
       },
+      'network-rtt': {
+        details: {
+          items: [
+            {origin: 'http://localhost:10200', rtt: '>0'},
+          ],
+        },
+      },
+      'network-server-latency': {
+        details: {
+          items: [
+            {origin: 'http://localhost:10200', serverResponseTime: '>0'},
+          ],
+        },
+      },
       'metrics': {
         // Flaky in DevTools
         _excludeRunner: 'devtools',
@@ -585,7 +599,7 @@ const expectations = {
       },
       'largest-contentful-paint-element': {
         score: null,
-        displayValue: '1 element found',
+        displayValue: /\d+\xa0ms/,
         details: {
           items: [
             {

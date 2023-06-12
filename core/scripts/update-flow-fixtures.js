@@ -152,6 +152,7 @@ async function generateFlowResult() {
   // Normalize some data so it doesn't change on every update.
   for (const {lhr} of flowResult.steps) {
     assetSaver.normalizeTimingEntries(lhr.timing.entries);
+    assetSaver.elideAuditErrorStacks(lhr);
     lhr.timing.total = lhr.timing.entries.length;
   }
 

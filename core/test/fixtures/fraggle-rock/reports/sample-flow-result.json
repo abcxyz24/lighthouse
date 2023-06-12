@@ -186,8 +186,7 @@
               "type": "debugdata",
               "items": [
                 {
-                  "cumulativeLayoutShiftMainFrame": 0.002631263732910156,
-                  "totalCumulativeLayoutShift": 0.002631263732910156
+                  "cumulativeLayoutShiftMainFrame": 0.002631263732910156
                 }
               ]
             }
@@ -756,7 +755,8 @@
                   "mimeType": "text/html",
                   "resourceType": "Document",
                   "priority": "VeryHigh",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/fonts/danielbd.woff2",
@@ -773,7 +773,8 @@
                   "resourceType": "Font",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://events.mikescerealshack.co/js/index.js",
@@ -789,7 +790,8 @@
                   "mimeType": "application/javascript",
                   "resourceType": "Script",
                   "priority": "Low",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/css/08dcb440d7d83b488817.css",
@@ -806,7 +808,8 @@
                   "resourceType": "Stylesheet",
                   "priority": "VeryHigh",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/main-1f8481d632114a408557.js",
@@ -823,7 +826,8 @@
                   "resourceType": "Script",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/webpack-657a8433bac0aabd564e.js",
@@ -840,7 +844,8 @@
                   "resourceType": "Script",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/framework.9d524150d48315f49e80.js",
@@ -857,7 +862,8 @@
                   "resourceType": "Script",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/commons.49455e4fa8cc3f51203f.js",
@@ -874,7 +880,8 @@
                   "resourceType": "Script",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/_app-ef508c97234d1af96c47.js",
@@ -891,7 +898,8 @@
                   "resourceType": "Script",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/1aeab0175d4c4d823d7a78205bceb5dd9cd36d32.a629f28ec97ae6e480bf.js",
@@ -908,7 +916,8 @@
                   "resourceType": "Script",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/index-37980adf97404e76e41a.js",
@@ -925,7 +934,8 @@
                   "resourceType": "Script",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/logo-text.svg",
@@ -941,7 +951,8 @@
                   "mimeType": "image/svg+xml",
                   "resourceType": "Image",
                   "priority": "Low",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/t5QnfQSErVZVsTAuFcBWI/_buildManifest.js",
@@ -957,7 +968,8 @@
                   "mimeType": "application/javascript",
                   "resourceType": "Script",
                   "priority": "Low",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/t5QnfQSErVZVsTAuFcBWI/_ssgManifest.js",
@@ -973,7 +985,8 @@
                   "mimeType": "application/javascript",
                   "resourceType": "Script",
                   "priority": "Low",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap",
@@ -989,7 +1002,8 @@
                   "mimeType": "text/css",
                   "resourceType": "Stylesheet",
                   "priority": "VeryLow",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "Google Fonts"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/1aeab0175d4c4d823d7a78205bceb5dd9cd36d32.a629f28ec97ae6e480bf.js",
@@ -1005,7 +1019,8 @@
                   "mimeType": "application/javascript",
                   "resourceType": "Other",
                   "priority": "VeryLow",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/9ea7d3ba8dd80c65c50028121847762825088b49.dc477066508a83415fce.js",
@@ -1021,7 +1036,8 @@
                   "mimeType": "application/javascript",
                   "resourceType": "Other",
                   "priority": "VeryLow",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/scenes/%5Bseason%5D/%5Bepisode%5D/%5Bscene%5D-526fe33be891a56314a3.js",
@@ -1037,7 +1053,8 @@
                   "mimeType": "application/javascript",
                   "resourceType": "Other",
                   "priority": "VeryLow",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2",
@@ -1053,7 +1070,8 @@
                   "mimeType": "font/woff2",
                   "resourceType": "Font",
                   "priority": "VeryHigh",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "Google Fonts"
                 },
                 {
                   "url": "https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2",
@@ -1069,7 +1087,8 @@
                   "mimeType": "font/woff2",
                   "resourceType": "Font",
                   "priority": "VeryHigh",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "Google Fonts"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/9ea7d3ba8dd80c65c50028121847762825088b49.dc477066508a83415fce.js",
@@ -1085,7 +1104,8 @@
                   "mimeType": "application/javascript",
                   "resourceType": "Script",
                   "priority": "Low",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/scenes/%5Bseason%5D/%5Bepisode%5D/%5Bscene%5D-526fe33be891a56314a3.js",
@@ -1101,7 +1121,8 @@
                   "mimeType": "application/javascript",
                   "resourceType": "Script",
                   "priority": "Low",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/favicon.png",
@@ -1117,7 +1138,8 @@
                   "mimeType": "image/png",
                   "resourceType": "Other",
                   "priority": "High",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 }
               ],
               "debugData": {
@@ -1295,7 +1317,6 @@
                   "maxPotentialFID": 193,
                   "cumulativeLayoutShift": 0.002631263732910156,
                   "cumulativeLayoutShiftMainFrame": 0.002631263732910156,
-                  "totalCumulativeLayoutShift": 0.002631263732910156,
                   "lcpLoadStart": 1000,
                   "lcpLoadEnd": 1078,
                   "timeToFirstByte": 615,
@@ -1323,7 +1344,6 @@
                   "observedDomContentLoadedTs": 183713237485,
                   "observedCumulativeLayoutShift": 0.002631263732910156,
                   "observedCumulativeLayoutShiftMainFrame": 0.002631263732910156,
-                  "observedTotalCumulativeLayoutShift": 0.002631263732910156,
                   "observedFirstVisualChange": 341,
                   "observedFirstVisualChangeTs": 183713323617,
                   "observedLastVisualChange": 575,
@@ -1518,7 +1538,7 @@
             "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)",
             "score": null,
             "scoreDisplayMode": "informative",
-            "displayValue": "1 element found",
+            "displayValue": "1,370 ms",
             "details": {
               "type": "list",
               "items": [
@@ -5624,79 +5644,79 @@
             },
             {
               "startTime": 127,
-              "name": "lh:audit:network-rtt",
+              "name": "lh:computed:EntityClassification",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 128,
-              "name": "lh:audit:network-server-latency",
+              "name": "lh:audit:network-rtt",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 129,
-              "name": "lh:audit:main-thread-tasks",
+              "name": "lh:audit:network-server-latency",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 130,
-              "name": "lh:audit:metrics",
+              "name": "lh:audit:main-thread-tasks",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 131,
-              "name": "lh:computed:TimingSummary",
+              "name": "lh:audit:metrics",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 132,
-              "name": "lh:computed:FirstContentfulPaintAllFrames",
+              "name": "lh:computed:TimingSummary",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 133,
-              "name": "lh:computed:LargestContentfulPaintAllFrames",
+              "name": "lh:computed:FirstContentfulPaintAllFrames",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 134,
-              "name": "lh:computed:LCPBreakdown",
+              "name": "lh:computed:LargestContentfulPaintAllFrames",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 135,
-              "name": "lh:computed:TimeToFirstByte",
+              "name": "lh:computed:LCPBreakdown",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 136,
-              "name": "lh:computed:LCPImageRecord",
+              "name": "lh:computed:TimeToFirstByte",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 137,
-              "name": "lh:audit:performance-budget",
+              "name": "lh:computed:LCPImageRecord",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 138,
-              "name": "lh:computed:ResourceSummary",
+              "name": "lh:audit:performance-budget",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 139,
-              "name": "lh:computed:EntityClassification",
+              "name": "lh:computed:ResourceSummary",
               "duration": 1,
               "entryType": "measure"
             },
@@ -6677,6 +6697,12 @@
                   "timeInMs": 22.397999999999982
                 },
                 "path": "audits[network-server-latency].displayValue"
+              },
+              {
+                "values": {
+                  "timeInMs": 1372.2951999999998
+                },
+                "path": "audits[largest-contentful-paint-element].displayValue"
               }
             ],
             "core/lib/i18n/i18n.js | maxPotentialFIDMetric": [
@@ -6993,20 +7019,6 @@
             "core/audits/largest-contentful-paint-element.js | description": [
               "audits[largest-contentful-paint-element].description"
             ],
-            "core/lib/i18n/i18n.js | displayValueElementsFound": [
-              {
-                "values": {
-                  "nodeCount": 1
-                },
-                "path": "audits[largest-contentful-paint-element].displayValue"
-              },
-              {
-                "values": {
-                  "nodeCount": 5
-                },
-                "path": "audits[layout-shift-elements].displayValue"
-              }
-            ],
             "core/lib/i18n/i18n.js | columnElement": [
               "audits[largest-contentful-paint-element].details.items[0].headings[0].label",
               "audits[lcp-lazy-loaded].details.headings[0].label",
@@ -7045,6 +7057,14 @@
             ],
             "core/audits/layout-shift-elements.js | description": [
               "audits[layout-shift-elements].description"
+            ],
+            "core/lib/i18n/i18n.js | displayValueElementsFound": [
+              {
+                "values": {
+                  "nodeCount": 5
+                },
+                "path": "audits[layout-shift-elements].displayValue"
+              }
             ],
             "core/audits/layout-shift-elements.js | columnContribution": [
               "audits[layout-shift-elements].details.headings[1].label"
@@ -8048,8 +8068,7 @@
               "type": "debugdata",
               "items": [
                 {
-                  "cumulativeLayoutShiftMainFrame": 0.13125,
-                  "totalCumulativeLayoutShift": 0.13125
+                  "cumulativeLayoutShiftMainFrame": 0.13125
                 }
               ]
             }
@@ -8511,7 +8530,8 @@
                   "statusCode": 200,
                   "mimeType": "application/javascript",
                   "resourceType": "Script",
-                  "priority": "Low"
+                  "priority": "Low",
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/logo-text.svg",
@@ -8526,7 +8546,8 @@
                   "statusCode": 200,
                   "mimeType": "image/svg+xml",
                   "resourceType": "Image",
-                  "priority": "High"
+                  "priority": "High",
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://mnl4bjjsnz-dsn.algolia.net/1/indexes/dev_OFFICE_SCENES/query",
@@ -8541,7 +8562,8 @@
                   "statusCode": 200,
                   "mimeType": "text/plain",
                   "resourceType": "Preflight",
-                  "priority": "High"
+                  "priority": "High",
+                  "entity": "Algolia"
                 },
                 {
                   "url": "https://mnl4bjjsnz-dsn.algolia.net/1/indexes/dev_OFFICE_SCENES/query",
@@ -8556,7 +8578,8 @@
                   "statusCode": 200,
                   "mimeType": "application/json",
                   "resourceType": "Fetch",
-                  "priority": "High"
+                  "priority": "High",
+                  "entity": "Algolia"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/index-37980adf97404e76e41a.js",
@@ -8571,7 +8594,8 @@
                   "statusCode": 200,
                   "mimeType": "application/javascript",
                   "resourceType": "Other",
-                  "priority": "VeryLow"
+                  "priority": "VeryLow",
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/terms-0236318e86139dd7d7f2.js",
@@ -8586,7 +8610,8 @@
                   "statusCode": 200,
                   "mimeType": "application/javascript",
                   "resourceType": "Other",
-                  "priority": "VeryLow"
+                  "priority": "VeryLow",
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/privacy-864d3895f3c3722acef2.js",
@@ -8601,7 +8626,8 @@
                   "statusCode": 200,
                   "mimeType": "application/javascript",
                   "resourceType": "Other",
-                  "priority": "VeryLow"
+                  "priority": "VeryLow",
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/privacy-864d3895f3c3722acef2.js",
@@ -8616,7 +8642,8 @@
                   "statusCode": 200,
                   "mimeType": "application/javascript",
                   "resourceType": "Script",
-                  "priority": "Low"
+                  "priority": "Low",
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/terms-0236318e86139dd7d7f2.js",
@@ -8631,7 +8658,8 @@
                   "statusCode": 200,
                   "mimeType": "application/javascript",
                   "resourceType": "Script",
-                  "priority": "Low"
+                  "priority": "Low",
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s8/e13/128w/81d89db1bf3d43b5b21f813d2f2a9777.jpg",
@@ -8646,7 +8674,8 @@
                   "statusCode": 200,
                   "mimeType": "image/jpeg",
                   "resourceType": "Image",
-                  "priority": "Low"
+                  "priority": "Low",
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s3/e3/128w/9b3031eb3988ba363fe946929a79e016.jpg",
@@ -8661,7 +8690,8 @@
                   "statusCode": 200,
                   "mimeType": "image/jpeg",
                   "resourceType": "Image",
-                  "priority": "Low"
+                  "priority": "Low",
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s3/e3/128w/793a408ca63a660b5d7aa1a41ac126ca.jpg",
@@ -8676,7 +8706,8 @@
                   "statusCode": 200,
                   "mimeType": "image/jpeg",
                   "resourceType": "Image",
-                  "priority": "Low"
+                  "priority": "Low",
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s7/e11/128w/5d1df07b1741f4c3e66ed20ef00265f5.jpg",
@@ -8691,7 +8722,8 @@
                   "statusCode": 200,
                   "mimeType": "image/jpeg",
                   "resourceType": "Image",
-                  "priority": "Low"
+                  "priority": "Low",
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s8/e13/128w/b997cdb40263ff124e2a245c5e86a9a3.jpg",
@@ -8706,7 +8738,8 @@
                   "statusCode": 200,
                   "mimeType": "image/jpeg",
                   "resourceType": "Image",
-                  "priority": "Low"
+                  "priority": "Low",
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s8/e3/128w/08b3049589ca7ae688b0f771f9730caf.jpg",
@@ -8721,7 +8754,8 @@
                   "statusCode": 200,
                   "mimeType": "image/jpeg",
                   "resourceType": "Image",
-                  "priority": "Low"
+                  "priority": "Low",
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s8/e13/128w/f5c5012a2afa2ac6b190dcd68306dbac.jpg",
@@ -8736,7 +8770,8 @@
                   "statusCode": 200,
                   "mimeType": "image/jpeg",
                   "resourceType": "Image",
-                  "priority": "Low"
+                  "priority": "Low",
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s9/e9/128w/5fbc916d0fffb01af1225d4ec2ab001d.jpg",
@@ -8751,7 +8786,8 @@
                   "statusCode": 200,
                   "mimeType": "image/jpeg",
                   "resourceType": "Image",
-                  "priority": "Low"
+                  "priority": "Low",
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s9/e9/128w/558dc2f7d9c947e5445fb3f1838cb62c.jpg",
@@ -8766,7 +8802,8 @@
                   "statusCode": 200,
                   "mimeType": "image/jpeg",
                   "resourceType": "Image",
-                  "priority": "Low"
+                  "priority": "Low",
+                  "entity": "mikescerealshack.co"
                 }
               ],
               "debugData": {
@@ -10948,43 +10985,43 @@
             },
             {
               "startTime": 62,
-              "name": "lh:audit:network-rtt",
+              "name": "lh:computed:EntityClassification",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 63,
-              "name": "lh:computed:NetworkAnalysis",
+              "name": "lh:audit:network-rtt",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 64,
-              "name": "lh:audit:network-server-latency",
+              "name": "lh:computed:NetworkAnalysis",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 65,
-              "name": "lh:audit:main-thread-tasks",
+              "name": "lh:audit:network-server-latency",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 66,
-              "name": "lh:audit:resource-summary",
+              "name": "lh:audit:main-thread-tasks",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 67,
-              "name": "lh:computed:ResourceSummary",
+              "name": "lh:audit:resource-summary",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 68,
-              "name": "lh:computed:EntityClassification",
+              "name": "lh:computed:ResourceSummary",
               "duration": 1,
               "entryType": "measure"
             },
@@ -16870,8 +16907,7 @@
               "type": "debugdata",
               "items": [
                 {
-                  "cumulativeLayoutShiftMainFrame": 0,
-                  "totalCumulativeLayoutShift": 0
+                  "cumulativeLayoutShiftMainFrame": 0
                 }
               ]
             }
@@ -17446,7 +17482,8 @@
                   "mimeType": "text/html",
                   "resourceType": "Document",
                   "priority": "VeryHigh",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/fonts/danielbd.woff2",
@@ -17463,7 +17500,8 @@
                   "resourceType": "Font",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://events.mikescerealshack.co/js/index.js",
@@ -17479,7 +17517,8 @@
                   "mimeType": "application/javascript",
                   "resourceType": "Script",
                   "priority": "Low",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/css/08dcb440d7d83b488817.css",
@@ -17496,7 +17535,8 @@
                   "resourceType": "Stylesheet",
                   "priority": "VeryHigh",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/main-1f8481d632114a408557.js",
@@ -17513,7 +17553,8 @@
                   "resourceType": "Script",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/webpack-657a8433bac0aabd564e.js",
@@ -17530,7 +17571,8 @@
                   "resourceType": "Script",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/framework.9d524150d48315f49e80.js",
@@ -17547,7 +17589,8 @@
                   "resourceType": "Script",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/commons.49455e4fa8cc3f51203f.js",
@@ -17564,7 +17607,8 @@
                   "resourceType": "Script",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/_app-ef508c97234d1af96c47.js",
@@ -17581,7 +17625,8 @@
                   "resourceType": "Script",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/1aeab0175d4c4d823d7a78205bceb5dd9cd36d32.a629f28ec97ae6e480bf.js",
@@ -17598,7 +17643,8 @@
                   "resourceType": "Script",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/corrections-7a620a51252fe2c2f77b.js",
@@ -17615,7 +17661,8 @@
                   "resourceType": "Script",
                   "priority": "High",
                   "isLinkPreload": true,
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/logo-text.svg",
@@ -17631,7 +17678,8 @@
                   "mimeType": "image/svg+xml",
                   "resourceType": "Image",
                   "priority": "Low",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/oscar-actually.jpg",
@@ -17647,7 +17695,8 @@
                   "mimeType": "image/jpeg",
                   "resourceType": "Image",
                   "priority": "High",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/t5QnfQSErVZVsTAuFcBWI/_buildManifest.js",
@@ -17663,7 +17712,8 @@
                   "mimeType": "application/javascript",
                   "resourceType": "Script",
                   "priority": "Low",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/t5QnfQSErVZVsTAuFcBWI/_ssgManifest.js",
@@ -17679,7 +17729,8 @@
                   "mimeType": "application/javascript",
                   "resourceType": "Script",
                   "priority": "Low",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap",
@@ -17695,7 +17746,8 @@
                   "mimeType": "text/css",
                   "resourceType": "Stylesheet",
                   "priority": "VeryLow",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "Google Fonts"
                 },
                 {
                   "url": "https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2",
@@ -17711,7 +17763,8 @@
                   "mimeType": "font/woff2",
                   "resourceType": "Font",
                   "priority": "VeryHigh",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "Google Fonts"
                 },
                 {
                   "url": "https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2",
@@ -17727,7 +17780,8 @@
                   "mimeType": "font/woff2",
                   "resourceType": "Font",
                   "priority": "VeryHigh",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "Google Fonts"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/1aeab0175d4c4d823d7a78205bceb5dd9cd36d32.a629f28ec97ae6e480bf.js",
@@ -17743,7 +17797,8 @@
                   "mimeType": "application/javascript",
                   "resourceType": "Other",
                   "priority": "VeryLow",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/index-37980adf97404e76e41a.js",
@@ -17759,7 +17814,8 @@
                   "mimeType": "application/javascript",
                   "resourceType": "Other",
                   "priority": "VeryLow",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/index-37980adf97404e76e41a.js",
@@ -17775,7 +17831,8 @@
                   "mimeType": "application/javascript",
                   "resourceType": "Script",
                   "priority": "Low",
-                  "experimentalFromMainFrame": true
+                  "experimentalFromMainFrame": true,
+                  "entity": "mikescerealshack.co"
                 }
               ],
               "debugData": {
@@ -17945,7 +18002,6 @@
                   "maxPotentialFID": 76,
                   "cumulativeLayoutShift": 0,
                   "cumulativeLayoutShiftMainFrame": 0,
-                  "totalCumulativeLayoutShift": 0,
                   "lcpLoadStart": 603,
                   "lcpLoadEnd": 837,
                   "timeToFirstByte": 603,
@@ -17973,7 +18029,6 @@
                   "observedDomContentLoadedTs": 183729805229,
                   "observedCumulativeLayoutShift": 0,
                   "observedCumulativeLayoutShiftMainFrame": 0,
-                  "observedTotalCumulativeLayoutShift": 0,
                   "observedFirstVisualChange": 89,
                   "observedFirstVisualChangeTs": 183729849318,
                   "observedLastVisualChange": 505,
@@ -18151,7 +18206,7 @@
             "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)",
             "score": null,
             "scoreDisplayMode": "informative",
-            "displayValue": "1 element found",
+            "displayValue": "1,800 ms",
             "details": {
               "type": "list",
               "items": [
@@ -22306,79 +22361,79 @@
             },
             {
               "startTime": 125,
-              "name": "lh:audit:network-rtt",
+              "name": "lh:computed:EntityClassification",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 126,
-              "name": "lh:audit:network-server-latency",
+              "name": "lh:audit:network-rtt",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 127,
-              "name": "lh:audit:main-thread-tasks",
+              "name": "lh:audit:network-server-latency",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 128,
-              "name": "lh:audit:metrics",
+              "name": "lh:audit:main-thread-tasks",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 129,
-              "name": "lh:computed:TimingSummary",
+              "name": "lh:audit:metrics",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 130,
-              "name": "lh:computed:FirstContentfulPaintAllFrames",
+              "name": "lh:computed:TimingSummary",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 131,
-              "name": "lh:computed:LargestContentfulPaintAllFrames",
+              "name": "lh:computed:FirstContentfulPaintAllFrames",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 132,
-              "name": "lh:computed:LCPBreakdown",
+              "name": "lh:computed:LargestContentfulPaintAllFrames",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 133,
-              "name": "lh:computed:TimeToFirstByte",
+              "name": "lh:computed:LCPBreakdown",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 134,
-              "name": "lh:computed:LCPImageRecord",
+              "name": "lh:computed:TimeToFirstByte",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 135,
-              "name": "lh:audit:performance-budget",
+              "name": "lh:computed:LCPImageRecord",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 136,
-              "name": "lh:computed:ResourceSummary",
+              "name": "lh:audit:performance-budget",
               "duration": 1,
               "entryType": "measure"
             },
             {
               "startTime": 137,
-              "name": "lh:computed:EntityClassification",
+              "name": "lh:computed:ResourceSummary",
               "duration": 1,
               "entryType": "measure"
             },
@@ -23353,6 +23408,12 @@
                   "timeInMs": 3.5377
                 },
                 "path": "audits[network-server-latency].displayValue"
+              },
+              {
+                "values": {
+                  "timeInMs": 1803.0092
+                },
+                "path": "audits[largest-contentful-paint-element].displayValue"
               }
             ],
             "core/lib/i18n/i18n.js | maxPotentialFIDMetric": [
@@ -23670,14 +23731,6 @@
             ],
             "core/audits/largest-contentful-paint-element.js | description": [
               "audits[largest-contentful-paint-element].description"
-            ],
-            "core/lib/i18n/i18n.js | displayValueElementsFound": [
-              {
-                "values": {
-                  "nodeCount": 1
-                },
-                "path": "audits[largest-contentful-paint-element].displayValue"
-              }
             ],
             "core/lib/i18n/i18n.js | columnElement": [
               "audits[largest-contentful-paint-element].details.items[0].headings[0].label",

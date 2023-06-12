@@ -46,7 +46,7 @@ class ServerResponseTime extends Audit {
    */
   static calculateResponseTime(record) {
     const timing = record.timing;
-    return timing ? timing.receiveHeadersEnd - timing.sendEnd : 0;
+    return timing ? timing.receiveHeadersStart - timing.sendEnd : 0;
   }
 
   /**

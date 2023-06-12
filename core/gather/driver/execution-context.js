@@ -125,14 +125,22 @@ class ExecutionContext {
 
     this._session.setNextProtocolTimeout(timeout);
     const response = await this._session.sendCommand('Runtime.evaluate', evaluationParams);
-    if (response.exceptionDetails) {
+
+    const ex = response.exceptionDetails;
+    if (ex) {
       // An error occurred before we could even create a Promise, should be *very* rare.
       // Also occurs when the expression is not valid JavaScript.
-      const errorMessage = response.exceptionDetails.exception ?
-        response.exceptionDetails.exception.description :
-        response.exceptionDetails.text;
-      return Promise.reject(new Error(`Evaluation exception: ${errorMessage}`));
+      const elidedExpression = expression.replace(/\s+/g, ' ').substring(0, 100);
+      const messageLines = [
+        'Runtime.evaluate exception',
+        `Expression: ${elidedExpression}\n---- (elided)`,
+        !ex.stackTrace ? `Parse error at: ${ex.lineNumber + 1}:${ex.columnNumber + 1}` : null,
+        ex.exception?.description || ex.text,
+      ].filter(Boolean);
+      const evaluationError = new Error(messageLines.join('\n'));
+      return Promise.reject(evaluationError);
     }
+
     // Protocol should always return a 'result' object, but it is sometimes undefined.  See #6026.
     if (response.result === undefined) {
       return Promise.reject(

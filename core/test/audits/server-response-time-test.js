@@ -11,7 +11,7 @@ describe('Performance: server-response-time audit', () => {
     const mainResource = {
       url: 'https://example.com/',
       requestId: '0',
-      timing: {receiveHeadersEnd: 830, sendEnd: 200},
+      timing: {receiveHeadersStart: 830, sendEnd: 200},
     };
     const devtoolsLog = networkRecordsToDevtoolsLog([mainResource]);
 
@@ -37,6 +37,33 @@ describe('Performance: server-response-time audit', () => {
   });
 
   it('succeeds when response time of root document is lower than 600ms', async () => {
+    const mainResource = {
+      url: 'https://example.com/',
+      requestId: '0',
+      timing: {receiveHeadersStart: 400, sendEnd: 200},
+    };
+    const devtoolsLog = networkRecordsToDevtoolsLog([mainResource]);
+
+    const artifacts = {
+      devtoolsLogs: {[ServerResponseTime.DEFAULT_PASS]: devtoolsLog},
+      URL: {mainDocumentUrl: 'https://example.com/'},
+      GatherContext: {gatherMode: 'navigation'},
+    };
+
+    const result = await ServerResponseTime.audit(artifacts, {computedCache: new Map()});
+    expect(result).toMatchObject({
+      numericValue: 200,
+      score: 1,
+      metricSavings: {
+        FCP: 100,
+        LCP: 100,
+      },
+    });
+  });
+
+  // TODO(compat): remove M116. See _backfillReceiveHeaderStartTiming.
+  // eslint-disable-next-line max-len
+  it('succeeds when response time of root document is lower than 600ms (receiveHeadersEnd fallback)', async () => {
     const mainResource = {
       url: 'https://example.com/',
       requestId: '0',

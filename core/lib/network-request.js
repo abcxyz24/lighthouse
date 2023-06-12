@@ -274,6 +274,7 @@ class NetworkRequest {
     }
 
     this._updateResponseHeadersEndTimeIfNecessary();
+    this._backfillReceiveHeaderStartTiming();
     this._updateTransferSizeForLightrider();
     this._updateTimingsForLightrider();
   }
@@ -293,6 +294,7 @@ class NetworkRequest {
     this.localizedFailDescription = data.errorText;
 
     this._updateResponseHeadersEndTimeIfNecessary();
+    this._backfillReceiveHeaderStartTiming();
     this._updateTransferSizeForLightrider();
     this._updateTimingsForLightrider();
   }
@@ -315,6 +317,7 @@ class NetworkRequest {
     this.networkEndTime = data.timestamp * 1000;
 
     this._updateResponseHeadersEndTimeIfNecessary();
+    this._backfillReceiveHeaderStartTiming();
   }
 
   /**
@@ -447,6 +450,19 @@ class NetworkRequest {
     if (this.responseHeaders.some(item => item.name === HEADER_PROTOCOL_IS_H2)) {
       this.protocol = 'h2';
     }
+  }
+
+  /**
+   * TODO(compat): remove M116.
+   * `timing.receiveHeadersStart` was added recently, and will be in M116. Until then,
+   * set it to receiveHeadersEnd, which is close enough, to allow consumers of NetworkRequest
+   * to use the new field without accounting for this backcompat.
+   */
+  _backfillReceiveHeaderStartTiming() {
+    // Do nothing if a value is already present!
+    if (!this.timing || this.timing.receiveHeadersStart !== undefined) return;
+
+    this.timing.receiveHeadersStart = this.timing.receiveHeadersEnd;
   }
 
   /**

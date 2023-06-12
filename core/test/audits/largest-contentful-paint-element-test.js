@@ -101,8 +101,8 @@ describe('Performance: largest-contentful-paint-element audit', () => {
     const auditResult = await LargestContentfulPaintElementAudit.audit(artifacts, context);
 
     expect(auditResult.score).toEqual(1);
-    expect(auditResult.notApplicable).toEqual(false);
-    expect(auditResult.displayValue).toBeDisplayString('1 element found');
+    expect(auditResult.notApplicable).toBeUndefined();
+    expect(auditResult.displayValue).toBeDisplayString('5,800\xa0ms');
     expect(auditResult.details.items).toHaveLength(2);
     expect(auditResult.details.items[0].items).toHaveLength(1);
     expect(auditResult.details.items[0].items[0].node.path).toEqual('1,HTML,3,BODY,5,DIV,0,HEADER');
@@ -145,10 +145,9 @@ describe('Performance: largest-contentful-paint-element audit', () => {
     const context = {settings: artifacts.settings, computedCache: new Map()};
     const auditResult = await LargestContentfulPaintElementAudit.audit(artifacts, context);
 
-    expect(auditResult.score).toEqual(1);
+    expect(auditResult.score).toEqual(null);
     expect(auditResult.notApplicable).toEqual(true);
-    expect(auditResult.displayValue).toBeDisplayString('0 elements found');
-    expect(auditResult.details.items).toHaveLength(1);
-    expect(auditResult.details.items[0].items).toHaveLength(0);
+    expect(auditResult.displayValue).toBeUndefined();
+    expect(auditResult.details).toBeUndefined();
   });
 });

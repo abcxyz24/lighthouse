@@ -10,6 +10,8 @@
 
 import {readFileSync, writeFileSync} from 'fs';
 
+import {elideAuditErrorStacks} from '../lib/asset-saver.js';
+
 const filename = process.argv[2];
 const extraFlag = process.argv[3];
 if (!filename) throw new Error('No filename provided.');
@@ -45,6 +47,9 @@ function cleanAndFormatLHR(lhrString) {
       auditResult.description = '**Excluded from diff**';
     }
   }
+
+  elideAuditErrorStacks(lhr);
+
   // Ensure we have a final newline to conform to .editorconfig
   return `${JSON.stringify(lhr, null, 2)}\n`;
 }

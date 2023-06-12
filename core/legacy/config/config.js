@@ -205,7 +205,7 @@ class LegacyResolvedConfig {
   }
 
   /**
-   * @deprecated `Config.fromJson` should be used instead.
+   * @deprecated `LegacyResolvedConfig.fromJson` should be used instead.
    * @constructor
    * @param {LH.Config} config
    * @param {{settings: LH.Config.Settings, passes: ?LH.Config.Pass[], audits: ?LH.Config.AuditDefn[]}} opts

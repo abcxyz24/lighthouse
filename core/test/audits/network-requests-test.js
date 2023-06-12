@@ -168,4 +168,28 @@ describe('Network requests audit', () => {
       isLinkPreload: true,
     }]);
   });
+
+  it('should include if network request was first or third party', async () => {
+    const records = [
+      {url: 'https://example.com/'},
+      {url: 'https://www.googletagmanager.com/gtm.js'},
+    ];
+
+    const artifacts = {
+      devtoolsLogs: {
+        [NetworkRequests.DEFAULT_PASS]: networkRecordsToDevtoolsLog(records),
+      },
+      URL: {mainDocumentUrl: 'https://example.com/'},
+      GatherContext,
+    };
+    const output = await NetworkRequests.audit(artifacts, {computedCache: new Map()});
+
+    expect(output.details.items).toMatchObject([{
+      url: 'https://example.com/',
+      entity: 'example.com',
+    }, {
+      url: 'https://www.googletagmanager.com/gtm.js',
+      entity: 'Google Tag Manager',
+    }]);
+  });
 });

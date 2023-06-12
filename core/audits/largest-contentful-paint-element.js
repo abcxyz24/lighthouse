@@ -50,19 +50,44 @@ class LargestContentfulPaintElement extends Audit {
   }
 
   /**
-   * @param {LH.Artifacts} artifacts
+   * @param {LH.Artifacts.MetricComputationDataInput} metricComputationData
    * @param {LH.Audit.Context} context
-   * @return {Promise<LH.Audit.Details.Table|undefined>}
+   * @return {Promise<number|undefined>}
    */
-  static async makePhaseTable(artifacts, context) {
-    const trace = artifacts.traces[Audit.DEFAULT_PASS];
-    const devtoolsLog = artifacts.devtoolsLogs[Audit.DEFAULT_PASS];
-    const gatherContext = artifacts.GatherContext;
-    const metricComputationData = {trace, devtoolsLog, gatherContext,
-      settings: context.settings, URL: artifacts.URL};
+  static async getOptionalLCPMetric(metricComputationData, context) {
+    try {
+      const {timing: metricLcp} =
+        await LargestContentfulPaint.request(metricComputationData, context);
+      return metricLcp;
+    } catch {}
+  }
 
-    const {timing: metricLcp} =
-      await LargestContentfulPaint.request(metricComputationData, context);
+  /**
+   * @param {LH.Artifacts} artifacts
+   * @return {LH.Audit.Details.Table|undefined}
+   */
+  static makeElementTable(artifacts) {
+    const lcpElement = artifacts.TraceElements
+      .find(element => element.traceEventType === 'largest-contentful-paint');
+    if (!lcpElement) return;
+
+    /** @type {LH.Audit.Details.Table['headings']} */
+    const headings = [
+      {key: 'node', valueType: 'node', label: str_(i18n.UIStrings.columnElement)},
+    ];
+
+    const lcpElementDetails = [{node: Audit.makeNodeItem(lcpElement.node)}];
+
+    return Audit.makeTableDetails(headings, lcpElementDetails);
+  }
+
+  /**
+   * @param {number} metricLcp
+   * @param {LH.Artifacts.MetricComputationDataInput} metricComputationData
+   * @param {LH.Audit.Context} context
+   * @return {Promise<LH.Audit.Details.Table>}
+   */
+  static async makePhaseTable(metricLcp, metricComputationData, context) {
     const {ttfb, loadStart, loadEnd} = await LCPBreakdown.request(metricComputationData, context);
 
     let loadDelay = 0;
@@ -102,36 +127,29 @@ class LargestContentfulPaintElement extends Audit {
    * @return {Promise<LH.Audit.Product>}
    */
   static async audit(artifacts, context) {
-    const lcpElement = artifacts.TraceElements
-      .find(element => element.traceEventType === 'largest-contentful-paint');
-    const lcpElementDetails = [];
-    if (lcpElement) {
-      lcpElementDetails.push({
-        node: Audit.makeNodeItem(lcpElement.node),
-      });
-    }
+    const trace = artifacts.traces[Audit.DEFAULT_PASS];
+    const devtoolsLog = artifacts.devtoolsLogs[Audit.DEFAULT_PASS];
+    const gatherContext = artifacts.GatherContext;
+    const metricComputationData = {trace, devtoolsLog, gatherContext,
+      settings: context.settings, URL: artifacts.URL};
 
-    /** @type {LH.Audit.Details.Table['headings']} */
-    const headings = [
-      {key: 'node', valueType: 'node', label: str_(i18n.UIStrings.columnElement)},
-    ];
-
-    const elementTable = Audit.makeTableDetails(headings, lcpElementDetails);
+    const elementTable = this.makeElementTable(artifacts);
+    if (!elementTable) return {score: null, notApplicable: true};
 
     const items = [elementTable];
-    if (elementTable.items.length) {
-      const phaseTable = await this.makePhaseTable(artifacts, context);
-      if (phaseTable) items.push(phaseTable);
+    let displayValue;
+
+    const metricLcp = await this.getOptionalLCPMetric(metricComputationData, context);
+    if (metricLcp) {
+      displayValue = str_(i18n.UIStrings.ms, {timeInMs: metricLcp});
+      const phaseTable = await this.makePhaseTable(metricLcp, metricComputationData, context);
+      items.push(phaseTable);
     }
 
     const details = Audit.makeListDetails(items);
 
-    const displayValue = str_(i18n.UIStrings.displayValueElementsFound,
-      {nodeCount: lcpElementDetails.length});
-
     return {
       score: 1,
-      notApplicable: lcpElementDetails.length === 0,
       displayValue,
       details,
     };
