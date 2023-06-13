@@ -19,8 +19,7 @@ const UIStrings = {
   failureTitle: 'Elements with the `role=text` attribute do have focusable descendents.',
   /** Description of a Lighthouse audit that tells the user *why* they should try to pass. This is displayed after a user expands the section to see more. No character length limits. The last sentence starting with 'Learn' becomes link text to additional documentation. */
   description: 'Adding `role=text` around a text node split by markup enables VoiceOver to treat ' +
-      'it as one phrase, but all the element\'s descedents will be treated as text nodes. ' +
-      'The focusable descendents would not be announced, which is a worse experience for users. ' +
+      'it as one phrase, but the element\'s focusable descendents will not be announced. ' +
       '[Learn more about the `role=text` attribute](https://dequeuniversity.com/rules/axe/4.7/aria-text).',
 };
 

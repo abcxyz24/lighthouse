@@ -19,7 +19,7 @@ const UIStrings = {
   failureTitle: 'Elements with `role="dialog"` or `role="alertdialog"` do not have accessible ' +
       'names.',
   /** Description of a Lighthouse audit that tells the user *why* they should have accessible names for ARIA dialog elements. This is displayed after a user expands the section to see more. No character length limits. The last sentence starting with 'Learn' becomes link text to additional documentation. */
-  description: 'ARIA dialog elements without an accessible name may prevent screen readers users ' +
+  description: 'ARIA dialog elements without accessible names may prevent screen readers users ' +
       'from discerning the purpose of these elements. ' +
       '[Learn how to make ARIA dialog elements more accessible](https://dequeuniversity.com/rules/axe/4.7/aria-dialog-name).',
 };
