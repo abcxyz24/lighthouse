@@ -2996,7 +2996,7 @@
     "aria-dialog-name": {
       "id": "aria-dialog-name",
       "title": "Elements with `role=\"dialog\"` or `role=\"alertdialog\"` have accessible names.",
-      "description": "ARIA dialog elements without an accessible name may prevent screen readers users from discerning the purpose of these elements. [Learn how to make ARIA dialog elements more accessible](https://dequeuniversity.com/rules/axe/4.7/aria-dialog-name).",
+      "description": "ARIA dialog elements without accessible names may prevent screen readers users from discerning the purpose of these elements. [Learn how to make ARIA dialog elements more accessible](https://dequeuniversity.com/rules/axe/4.7/aria-dialog-name).",
       "score": 1,
       "scoreDisplayMode": "binary",
       "details": {
@@ -3086,7 +3086,7 @@
     "aria-text": {
       "id": "aria-text",
       "title": "Elements with the `role=text` attribute do not have focusable descendents.",
-      "description": "Adding `role=text` around a text node split by markup enables VoiceOver to treat it as one phrase, but all the element's descedents will be treated as text nodes. The focusable descendents would not be announced, which is a worse experience for users. [Learn more about the `role=text` attribute](https://dequeuniversity.com/rules/axe/4.7/aria-text).",
+      "description": "Adding `role=text` around a text node split by markup enables VoiceOver to treat it as one phrase, but the element's focusable descendents will not be announced. [Learn more about the `role=text` attribute](https://dequeuniversity.com/rules/axe/4.7/aria-text).",
       "score": 1,
       "scoreDisplayMode": "binary",
       "details": {
