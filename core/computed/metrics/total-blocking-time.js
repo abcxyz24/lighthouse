@@ -60,7 +60,7 @@ class TotalBlockingTime extends ComputedMetric {
         timing: calculateSumOfBlockingTime(
           events,
           0,
-          data.processedTrace.timestamps.traceEnd
+          data.processedTrace.timings.traceEnd
         ),
       };
     }
