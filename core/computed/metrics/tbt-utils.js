@@ -10,10 +10,12 @@ const BLOCKING_TIME_THRESHOLD = 50;
  * @param {{start: number, end: number, duration: number}} event
  * @param {number} startTimeMs
  * @param {number} endTimeMs
+ * @param {{start: number, end: number, duration: number}} [topLevelEvent] Leave unset if `event` is top level. Has no effect if `event` has the same duration as `topLevelEvent`.
  * @return {number}
  */
-function calculateTbtImpactForEvent(event, startTimeMs, endTimeMs) {
-  const threshold = BLOCKING_TIME_THRESHOLD;
+function calculateTbtImpactForEvent(event, startTimeMs, endTimeMs, topLevelEvent) {
+  let threshold = BLOCKING_TIME_THRESHOLD;
+  if (topLevelEvent) threshold *= (event.duration / topLevelEvent.duration);
 
   // Early exit for small tasks, which should far outnumber long tasks.
   if (event.duration < threshold) return 0;

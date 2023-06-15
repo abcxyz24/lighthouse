@@ -16,6 +16,18 @@ import {calculateTbtImpactForEvent} from './metrics/tbt-utils.js';
 
 class TBTImpactTasks {
   /**
+   * @param {LH.Artifacts.TaskNode} task
+   * @return {LH.Artifacts.TaskNode}
+   */
+  static getTopLevelTask(task) {
+    let topLevelTask = task;
+    while (topLevelTask.parent) {
+      topLevelTask = topLevelTask.parent;
+    }
+    return topLevelTask;
+  }
+
+  /**
    * @param {LH.Artifacts.MetricComputationDataInput} metricComputationData
    * @param {LH.Artifacts.ComputedContext} context
    * @return {Promise<{startTimeMs: number, endTimeMs: number}>}
@@ -73,7 +85,7 @@ class TBTImpactTasks {
         traceEventToTask.set(task.event, task);
       }
 
-      // Use lantern TBT timings to calculate the TBT impact of toplevel tasks.
+      // Use lantern TBT timings to calculate the TBT impact of top level tasks.
       for (const [node, timing] of tbtResult.pessimisticEstimate.nodeTimings) {
         if (node.type !== 'cpu') continue;
 
@@ -92,23 +104,22 @@ class TBTImpactTasks {
         taskToEvent.set(task, event);
       }
 
-      // Interpolate the TBT impact of remaining tasks using their toplevel task.
+      // Interpolate the TBT impact of remaining tasks using the top level ancestor tasks.
+      // We don't have any lantern estimates for tasks that are not top level, so we need to estimate
+      // the lantern timing based on the task's observed timing relative to it's top level task's observed timing.
       for (const task of tasks) {
         if (taskToImpact.has(task)) continue;
 
-        let toplevelTask = task;
-        while (toplevelTask.parent) {
-          toplevelTask = toplevelTask.parent;
-        }
+        const topLevelTask = this.getTopLevelTask(task);
 
-        const toplevelEvent = taskToEvent.get(toplevelTask);
-        if (!toplevelEvent) continue;
+        const topLevelEvent = taskToEvent.get(topLevelTask);
+        if (!topLevelEvent) continue;
 
-        const startRatio = (task.startTime - toplevelTask.startTime) / toplevelTask.duration;
-        const start = startRatio * toplevelEvent.duration + toplevelEvent.start;
+        const startRatio = (task.startTime - topLevelTask.startTime) / topLevelTask.duration;
+        const start = startRatio * topLevelEvent.duration + topLevelEvent.start;
 
-        const endRatio = (toplevelTask.endTime - task.endTime) / toplevelTask.duration;
-        const end = toplevelEvent.end - endRatio * toplevelEvent.duration;
+        const endRatio = (topLevelTask.endTime - task.endTime) / topLevelTask.duration;
+        const end = topLevelEvent.end - endRatio * topLevelEvent.duration;
 
         const event = {
           start,
@@ -116,7 +127,7 @@ class TBTImpactTasks {
           duration: end - start,
         };
 
-        const tbtImpact = calculateTbtImpactForEvent(event, startTimeMs, endTimeMs);
+        const tbtImpact = calculateTbtImpactForEvent(event, startTimeMs, endTimeMs, topLevelEvent);
 
         taskToImpact.set(task, tbtImpact);
         taskToEvent.set(task, event);
@@ -129,7 +140,14 @@ class TBTImpactTasks {
           duration: task.duration,
         };
 
-        const tbtImpact = calculateTbtImpactForEvent(event, startTimeMs, endTimeMs);
+        const topLevelTask = this.getTopLevelTask(task);
+        const topLevelEvent = {
+          start: topLevelTask.startTime,
+          end: topLevelTask.endTime,
+          duration: topLevelTask.duration,
+        };
+
+        const tbtImpact = calculateTbtImpactForEvent(event, startTimeMs, endTimeMs, topLevelEvent);
 
         taskToImpact.set(task, tbtImpact);
       }
