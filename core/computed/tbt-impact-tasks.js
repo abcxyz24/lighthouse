@@ -4,7 +4,6 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-import {TraceProcessor} from '../lib/tracehouse/trace-processor.js';
 import {makeComputedArtifact} from './computed-artifact.js';
 import {MainThreadTasks} from './main-thread-tasks.js';
 import {FirstContentfulPaint} from './metrics/first-contentful-paint.js';
@@ -13,7 +12,7 @@ import {TotalBlockingTime} from './metrics/total-blocking-time.js';
 import {ProcessedTrace} from './processed-trace.js';
 import {calculateTbtImpactForEvent} from './metrics/tbt-utils.js';
 
-/** @typedef {{task: LH.Artifacts.TaskNode, tbtImpact: number}} TBTImpactTask */
+/** @typedef {LH.Artifacts.TaskNode & {tbtImpact: number, selfTbtImpact: number}} TBTImpactTask */
 
 class TBTImpactTasks {
   /**
@@ -61,17 +60,20 @@ class TBTImpactTasks {
 
     /** @type {Map<LH.Artifacts.TaskNode, number>} */
     const taskToImpact = new Map();
-    /** @type {Map<LH.TraceEvent, LH.Artifacts.TaskNode>} */
-    const traceEventToTask = new Map();
-
-    for (const task of tasks) {
-      traceEventToTask.set(task.event, task);
-      taskToImpact.set(task, 0);
-    }
 
     const {startTimeMs, endTimeMs} = await this.getTBTBounds(metricComputationData, context);
 
     if ('pessimisticEstimate' in tbtResult) {
+      /** @type {Map<LH.Artifacts.TaskNode, {start: number, end: number, duration: number}>} */
+      const taskToEvent = new Map();
+
+      /** @type {Map<LH.TraceEvent, LH.Artifacts.TaskNode>} */
+      const traceEventToTask = new Map();
+      for (const task of tasks) {
+        traceEventToTask.set(task.event, task);
+      }
+
+      // Use lantern TBT timings to calculate the TBT impact of toplevel tasks.
       for (const [node, timing] of tbtResult.pessimisticEstimate.nodeTimings) {
         if (node.type !== 'cpu') continue;
 
@@ -87,28 +89,70 @@ class TBTImpactTasks {
         if (!task) continue;
 
         taskToImpact.set(task, tbtImpact);
+        taskToEvent.set(task, event);
       }
-    } else {
-      const processedTrace = await ProcessedTrace.request(metricComputationData.trace, context);
-      for (const traceEvent of processedTrace.mainThreadEvents) {
-        if (!TraceProcessor.isScheduleableTask(traceEvent) || !traceEvent.dur) continue;
+
+      // Interpolate the TBT impact of remaining tasks using their toplevel task.
+      for (const task of tasks) {
+        if (taskToImpact.has(task)) continue;
+
+        let toplevelTask = task;
+        while (toplevelTask.parent) {
+          toplevelTask = toplevelTask.parent;
+        }
+
+        const toplevelEvent = taskToEvent.get(toplevelTask);
+        if (!toplevelEvent) continue;
+
+        const startRatio = (task.startTime - toplevelTask.startTime) / toplevelTask.duration;
+        const start = startRatio * toplevelEvent.duration + toplevelEvent.start;
+
+        const endRatio = (toplevelTask.endTime - task.endTime) / toplevelTask.duration;
+        const end = toplevelEvent.end - endRatio * toplevelEvent.duration;
 
         const event = {
-          start: (traceEvent.ts - processedTrace.timeOriginEvt.ts) / 1000,
-          end: (traceEvent.ts + traceEvent.dur - processedTrace.timeOriginEvt.ts) / 1000,
-          duration: traceEvent.dur / 1000,
+          start,
+          end,
+          duration: end - start,
         };
 
         const tbtImpact = calculateTbtImpactForEvent(event, startTimeMs, endTimeMs);
 
-        const task = traceEventToTask.get(traceEvent);
-        if (!task) continue;
+        taskToImpact.set(task, tbtImpact);
+        taskToEvent.set(task, event);
+      }
+    } else {
+      for (const task of tasks) {
+        const event = {
+          start: task.startTime,
+          end: task.endTime,
+          duration: task.duration,
+        };
+
+        const tbtImpact = calculateTbtImpactForEvent(event, startTimeMs, endTimeMs);
 
         taskToImpact.set(task, tbtImpact);
       }
     }
 
-    return Array.from(taskToImpact.entries()).map(([task, impact]) => ({task, tbtImpact: impact}));
+    /** @type {TBTImpactTask[]} */
+    const tbtImpactTasks = [];
+    for (const task of tasks) {
+      const tbtImpact = taskToImpact.get(task) || 0;
+      let selfTbtImpact = tbtImpact;
+
+      for (const child of task.children) {
+        const childTbtImpact = taskToImpact.get(child) || 0;
+        selfTbtImpact -= childTbtImpact;
+      }
+
+      tbtImpactTasks.push({
+        ...task,
+        tbtImpact,
+        selfTbtImpact,
+      });
+    }
+    return tbtImpactTasks;
   }
 }
 
