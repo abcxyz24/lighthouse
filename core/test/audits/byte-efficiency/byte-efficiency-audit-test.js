@@ -167,12 +167,12 @@ describe('Byte efficiency base audit', () => {
       headings: baseHeadings,
       items: [
         {url: 'http://example.com/', wastedBytes: 200_000},
-        {url: 'http://www.example.com/image.png', wastedBytes: 100_000, totalBytes: 200_000},
+        {url: 'http://www.example.com/image.png', wastedBytes: 500_000},
       ],
     }, simulator, metricComputationInput, {computedCache: new Map()});
 
-    assert.equal(result.metricSavings.FCP, 900);
-    assert.equal(result.metricSavings.LCP, 2660);
+    expect(result.metricSavings.FCP).toEqual(900);
+    expect(result.metricSavings.LCP).toBeCloseTo(2384.2, 0.1);
   });
 
   it('should score the wastedMs', async () => {

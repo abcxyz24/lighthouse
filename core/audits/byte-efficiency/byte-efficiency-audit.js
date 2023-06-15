@@ -13,7 +13,6 @@ import {PageDependencyGraph} from '../../computed/page-dependency-graph.js';
 import {LanternLargestContentfulPaint} from '../../computed/metrics/lantern-largest-contentful-paint.js';
 import {LanternFirstContentfulPaint} from '../../computed/metrics/lantern-first-contentful-paint.js';
 import {LCPImageRecord} from '../../computed/lcp-image-record.js';
-import {LCPBreakdown} from '../../computed/metrics/lcp-breakdown.js';
 
 const str_ = i18n.createIcuMessageFn(import.meta.url, {});
 
@@ -275,12 +274,10 @@ class ByteEfficiencyAudit extends Audit {
       // The LCP graph can underestimate the LCP savings if there is potential savings on the LCP record itself.
       let lcpRecordSavings = 0;
       const lcpRecord = await LCPImageRecord.request(metricComputationInput, context);
-      const lcpBreakdown = await LCPBreakdown.request(metricComputationInput, context);
-      if (lcpRecord && lcpBreakdown.loadStart && lcpBreakdown.loadEnd) {
+      if (lcpRecord) {
         const lcpResult = results.find(result => result.url === lcpRecord.url);
         if (lcpResult) {
-          const lcpLoadTime = lcpBreakdown.loadEnd - lcpBreakdown.loadStart;
-          lcpRecordSavings = Math.round(lcpLoadTime * lcpResult.wastedBytes / lcpResult.totalBytes);
+          lcpRecordSavings = simulator.computeWastedMsFromWastedBytes(lcpResult.wastedBytes);
         }
       }
 
