@@ -19665,7 +19665,7 @@
                 "type": "debugdata",
                 "metricSavings": {
                   "FCP": 0,
-                  "LCP": 300
+                  "LCP": 328.4919261932373
                 }
               }
             }
