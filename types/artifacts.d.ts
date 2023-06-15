@@ -802,7 +802,6 @@ declare module Artifacts {
     maxPotentialFID: number | undefined;
     cumulativeLayoutShift: number | undefined;
     cumulativeLayoutShiftMainFrame: number | undefined;
-    totalCumulativeLayoutShift: number | undefined;
     totalBlockingTime: number | undefined;
     observedTimeOrigin: number;
     observedTimeOriginTs: number;
@@ -810,7 +809,6 @@ declare module Artifacts {
     observedNavigationStartTs: number | undefined;
     observedCumulativeLayoutShift: number | undefined;
     observedCumulativeLayoutShiftMainFrame: number | undefined;
-    observedTotalCumulativeLayoutShift: number | undefined;
     observedFirstPaint: number | undefined;
     observedFirstPaintTs: number | undefined;
     observedFirstContentfulPaint: number | undefined;

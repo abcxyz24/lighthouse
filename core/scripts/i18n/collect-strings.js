@@ -701,8 +701,6 @@ function checkKnownFixedCollisions(strings) {
 
   try {
     expect(collidingMessages).toEqual([
-      '$MARKDOWN_SNIPPET_0$ is deprecated. Please use standardized $MARKDOWN_SNIPPET_1$ instead.',
-      '$MARKDOWN_SNIPPET_0$ is deprecated. Please use standardized $MARKDOWN_SNIPPET_1$ instead.',
       'ARIA $MARKDOWN_SNIPPET_0$ elements do not have accessible names.',
       'ARIA $MARKDOWN_SNIPPET_0$ elements do not have accessible names.',
       'ARIA $MARKDOWN_SNIPPET_0$ elements do not have accessible names.',
@@ -711,6 +709,8 @@ function checkKnownFixedCollisions(strings) {
       'ARIA $MARKDOWN_SNIPPET_0$ elements have accessible names',
       'ARIA $MARKDOWN_SNIPPET_0$ elements have accessible names',
       'ARIA $MARKDOWN_SNIPPET_0$ elements have accessible names',
+      'Back/forward cache is disabled due to a keepalive request.',
+      'Back/forward cache is disabled due to a keepalive request.',
       'Consider uploading your GIF to a service which will make it available to embed as an HTML5 video.',
       'Consider uploading your GIF to a service which will make it available to embed as an HTML5 video.',
       'Consider uploading your GIF to a service which will make it available to embed as an HTML5 video.',

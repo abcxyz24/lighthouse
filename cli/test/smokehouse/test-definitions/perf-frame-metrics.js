@@ -78,7 +78,6 @@ const expectations = {
               largestContentfulPaintAllFrames: '<5000',
               cumulativeLayoutShift: '0.133 +/- 0.001',
               cumulativeLayoutShiftMainFrame: '0.001 +/- 0.0005',
-              totalCumulativeLayoutShift: '0.001 +/- 0.0005',
             },
             {
               lcpInvalidated: false,

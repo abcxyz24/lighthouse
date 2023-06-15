@@ -5,6 +5,7 @@
  */
 
 import puppeteer, {Browser, Page} from 'puppeteer';
+import {getChromePath} from 'chrome-launcher';
 
 import {ReportGenerator} from '../../report/generator/report-generator.js';
 import {swapFlowLocale} from '../../shared/localization/swap-flow-locale.js';
@@ -20,6 +21,7 @@ describe('Lighthouse Flow Report', () => {
   before(async () => {
     browser = await puppeteer.launch({
       headless: true,
+      executablePath: getChromePath(),
     });
     page = await browser.newPage();
     page.on('pageerror', pageError => pageErrors.push(pageError));

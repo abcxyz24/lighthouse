@@ -125,6 +125,7 @@ class NonCompositedAnimations extends Audit {
       return {
         score: 1,
         notApplicable: true,
+        metricSavings: {CLS: 0},
       };
     }
 
@@ -195,6 +196,12 @@ class NonCompositedAnimations extends Audit {
     return {
       score: results.length === 0 ? 1 : 0,
       notApplicable: results.length === 0,
+      metricSavings: {
+        // We do not have enough information to accurately predict the impact of individual animations on CLS.
+        // It is also not worth the effort since only a small percentage of sites have their CLS affected by non-composited animations.
+        // https://github.com/GoogleChrome/lighthouse/pull/15099#issuecomment-1558107906
+        CLS: 0,
+      },
       details,
       displayValue,
     };

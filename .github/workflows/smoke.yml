@@ -5,6 +5,9 @@ on:
     branches: [main]
   pull_request: # run on all PRs, not just PRs to a particular branch
 
+env:
+  PUPPETEER_SKIP_DOWNLOAD: 1
+
 jobs:
   # `smoke` runs as a matrix across 6 jobs:
   #  * The smoke tests are split into 3 batches, to parallelize.
@@ -87,10 +90,11 @@ jobs:
     - name: git clone
       uses: actions/checkout@v2
 
-    - name: Use Node.js 16.x
+    # Use Node 18 here earlier than everywhere else, see https://github.com/GoogleChrome/lighthouse/issues/15160#issuecomment-1589913408
+    - name: Use Node.js 18.x
       uses: actions/setup-node@v1
       with:
-        node-version: 16.x
+        node-version: 18.x
 
     - name: Define ToT chrome path
       run: echo "CHROME_PATH=${env:GITHUB_WORKSPACE}\chrome-win\chrome.exe" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append

@@ -14,6 +14,10 @@ const devtoolsLog = readJson('../../../fixtures/traces/progressive-app-m60.devto
 const devtoolsLogWithRedirect = readJson('../../../fixtures/artifacts/redirect/devtoolslog.json', import.meta);
 
 describe('DependencyGraph/Simulator/NetworkAnalyzer', () => {
+  afterEach(() => {
+    global.isLightrider = undefined;
+  });
+
   let recordId;
 
   function createRecord(opts) {
@@ -136,7 +140,15 @@ describe('DependencyGraph/Simulator/NetworkAnalyzer', () => {
 
   describe('#estimateRTTByOrigin', () => {
     it('should infer from tcp timing when available', () => {
-      const timing = {connectStart: 1, connectEnd: 100};
+      const timing = {connectStart: 0, connectEnd: 99};
+      const record = createRecord({networkRequestTime: 0, networkEndTime: 1, timing});
+      const result = NetworkAnalyzer.estimateRTTByOrigin([record]);
+      const expected = {min: 99, max: 99, avg: 99, median: 99};
+      assert.deepStrictEqual(result.get('https://example.com'), expected);
+    });
+
+    it('should infer only one estimate if tcp and ssl start times are equal', () => {
+      const timing = {connectStart: 0, connectEnd: 99, sslStart: 0, sslEnd: 99};
       const record = createRecord({networkRequestTime: 0, networkEndTime: 1, timing});
       const result = NetworkAnalyzer.estimateRTTByOrigin([record]);
       const expected = {min: 99, max: 99, avg: 99, median: 99};
@@ -144,7 +156,7 @@ describe('DependencyGraph/Simulator/NetworkAnalyzer', () => {
     });
 
     it('should infer from tcp and ssl timing when available', () => {
-      const timing = {connectStart: 1, connectEnd: 100, sslStart: 50, sslEnd: 100};
+      const timing = {connectStart: 0, connectEnd: 99, sslStart: 50, sslEnd: 99};
       const record = createRecord({networkRequestTime: 0, networkEndTime: 1, timing});
       const result = NetworkAnalyzer.estimateRTTByOrigin([record]);
       const expected = {min: 49, max: 50, avg: 49.5, median: 49.5};
@@ -152,7 +164,7 @@ describe('DependencyGraph/Simulator/NetworkAnalyzer', () => {
     });
 
     it('should infer from connection timing when available for h3 (one estimate)', () => {
-      const timing = {connectStart: 1, connectEnd: 100, sslStart: 1, sslEnd: 100};
+      const timing = {connectStart: 0, connectEnd: 99, sslStart: 1, sslEnd: 99};
       const record =
         createRecord({networkRequestTime: 0, networkEndTime: 1, timing, protocol: 'h3'});
       const result = NetworkAnalyzer.estimateRTTByOrigin([record]);
@@ -240,6 +252,22 @@ describe('DependencyGraph/Simulator/NetworkAnalyzer', () => {
         assertCloseEnough(result.median, resultApprox.median, 30);
       });
     });
+
+    it('should use lrStatistics when needed', () => {
+      global.isLightrider = true;
+      const record = createRecord({timing: {}, lrStatistics: {TCPMs: 100}});
+      const result = NetworkAnalyzer.estimateRTTByOrigin([record]);
+      const expected = {min: 50, max: 50, avg: 50, median: 50};
+      assert.deepStrictEqual(result.get('https://example.com'), expected);
+    });
+
+    it('should use lrStatistics when needed (h3)', () => {
+      global.isLightrider = true;
+      const record = createRecord({protocol: 'h3', timing: {}, lrStatistics: {TCPMs: 100}});
+      const result = NetworkAnalyzer.estimateRTTByOrigin([record]);
+      const expected = {min: 100, max: 100, avg: 100, median: 100};
+      assert.deepStrictEqual(result.get('https://example.com'), expected);
+    });
   });
 
   describe('#estimateServerResponseTimeByOrigin', () => {
@@ -290,6 +318,14 @@ describe('DependencyGraph/Simulator/NetworkAnalyzer', () => {
         assertCloseEnough(result.avg, resultApprox.avg, 30);
         assertCloseEnough(result.median, resultApprox.median, 30);
       });
+    });
+
+    it('should use lrStatistics when needed', () => {
+      global.isLightrider = true;
+      const record = createRecord({timing: {}, lrStatistics: {requestMs: 100}});
+      const result = NetworkAnalyzer.estimateServerResponseTimeByOrigin([record]);
+      const expected = {min: 100, max: 100, avg: 100, median: 100};
+      assert.deepStrictEqual(result.get('https://example.com'), expected);
     });
   });
 

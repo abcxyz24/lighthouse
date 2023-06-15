@@ -224,7 +224,11 @@ class WorkDuringInteraction extends Audit {
     const {settings} = context;
     // TODO: responsiveness isn't yet supported by lantern.
     if (settings.throttlingMethod === 'simulate') {
-      return {score: null, notApplicable: true};
+      return {
+        score: null,
+        notApplicable: true,
+        metricSavings: {INP: 0},
+      };
     }
 
     const trace = artifacts.traces[WorkDuringInteraction.DEFAULT_PASS];
@@ -232,7 +236,11 @@ class WorkDuringInteraction extends Audit {
     const interactionEvent = await Responsiveness.request(metricData, context);
     // If no interaction, diagnostic audit is n/a.
     if (interactionEvent === null) {
-      return {score: null, notApplicable: true};
+      return {
+        score: null,
+        notApplicable: true,
+        metricSavings: {INP: 0},
+      };
     }
     // TODO: remove workaround once 103.0.5052.0 is sufficiently released.
     if (interactionEvent.name === 'FallbackTiming') {
@@ -270,6 +278,9 @@ class WorkDuringInteraction extends Audit {
       details: {
         type: 'list',
         items: auditDetailsItems,
+      },
+      metricSavings: {
+        INP: duration,
       },
     };
   }

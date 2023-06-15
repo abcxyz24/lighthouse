@@ -255,6 +255,9 @@ Object {
       "timeInMs": 368,
     },
   },
+  "metricSavings": Object {
+    "INP": 368,
+  },
   "score": 0,
 }
 `);
@@ -280,6 +283,7 @@ Object {
     expect(result).toMatchObject({
       score: null,
       notApplicable: true,
+      metricSavings: {INP: 0},
     });
   });
 
@@ -290,6 +294,7 @@ Object {
     expect(result).toMatchObject({
       score: null,
       notApplicable: true,
+      metricSavings: {INP: 0},
     });
   });
 });

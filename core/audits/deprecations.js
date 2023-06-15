@@ -11,7 +11,7 @@
 import {Audit} from './audit.js';
 import {JSBundles} from '../computed/js-bundles.js';
 import * as i18n from '../lib/i18n/i18n.js';
-import {getIssueDetailDescription} from '../lib/deprecations-strings.js';
+import {getIssueDetailDescription} from '../lib/deprecation-description.js';
 
 /* eslint-disable max-len */
 const UIStrings = {

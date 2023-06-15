@@ -5,6 +5,7 @@
  */
 
 import puppeteer from 'puppeteer';
+import {getChromePath} from 'chrome-launcher';
 
 import {ReportGenerator} from '../../generator/report-generator.js';
 import {axeSource} from '../../../core/lib/axe.js';
@@ -17,7 +18,9 @@ describe('ReportRendererAxe', () => {
     let browser;
 
     before(async () => {
-      browser = await puppeteer.launch();
+      browser = await puppeteer.launch({
+        executablePath: getChromePath(),
+      });
     });
 
     after(async () => {

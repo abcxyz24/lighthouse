@@ -32,7 +32,6 @@ describe('Cumulative Layout Shift', () => {
         type: 'debugdata',
         items: [{
           cumulativeLayoutShiftMainFrame: expect.toBeApproximately(2.268816, 6),
-          totalCumulativeLayoutShift: expect.toBeApproximately(4.809794, 6),
         }],
       },
     });

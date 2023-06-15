@@ -139,14 +139,24 @@ class NetworkAnalyzer {
     return NetworkAnalyzer._estimateValueByOrigin(records, ({timing, connectionReused, record}) => {
       if (connectionReused) return;
 
-      if (timing.connectEnd > 0 && timing.connectStart > 0 && record.protocol.startsWith('h3')) {
+      // In LR, network records are missing connection timing, but we've smuggled it in via headers.
+      if (global.isLightrider && record.lrStatistics) {
+        if (record.protocol.startsWith('h3')) {
+          return record.lrStatistics.TCPMs;
+        } else {
+          return [record.lrStatistics.TCPMs / 2, record.lrStatistics.TCPMs / 2];
+        }
+      }
+
+      const {connectStart, sslStart, sslEnd, connectEnd} = timing;
+      if (connectEnd >= 0 && connectStart >= 0 && record.protocol.startsWith('h3')) {
         // These values are equal to sslStart and sslEnd for h3.
-        return timing.connectEnd - timing.connectStart;
-      } else if (timing.sslStart > 0 && timing.sslEnd > 0) {
+        return connectEnd - connectStart;
+      } else if (sslStart >= 0 && sslEnd >= 0 && sslStart !== connectStart) {
         // SSL can also be more than 1 RT but assume False Start was used.
-        return [timing.connectEnd - timing.sslStart, timing.sslStart - timing.connectStart];
-      } else if (timing.connectStart > 0 && timing.connectEnd > 0) {
-        return timing.connectEnd - timing.connectStart;
+        return [connectEnd - sslStart, sslStart - connectStart];
+      } else if (connectStart >= 0 && connectEnd >= 0) {
+        return connectEnd - connectStart;
       }
     });
   }
@@ -246,6 +256,10 @@ class NetworkAnalyzer {
    */
   static _estimateResponseTimeByOrigin(records, rttByOrigin) {
     return NetworkAnalyzer._estimateValueByOrigin(records, ({record, timing}) => {
+      // Lightrider does not have timings for sendEnd, but we do have this timing which should be
+      // close to the response time.
+      if (global.isLightrider && record.lrStatistics) return record.lrStatistics.requestMs;
+
       if (!Number.isFinite(timing.receiveHeadersEnd) || timing.receiveHeadersEnd < 0) return;
       if (!Number.isFinite(timing.sendEnd) || timing.sendEnd < 0) return;
 

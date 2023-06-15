@@ -8,6 +8,7 @@ on:
 env:
   DEPOT_TOOLS_PATH: ${{ github.workspace }}/depot-tools
   DEVTOOLS_PATH: ${{ github.workspace }}/devtools-frontend
+  PUPPETEER_SKIP_DOWNLOAD: 1
 
 jobs:
   build:

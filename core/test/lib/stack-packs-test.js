@@ -60,6 +60,7 @@ Array [
   "nuxt",
   "octobercms",
   "react",
+  "wix",
   "wordpress",
   "wp-rocket",
 ]
@@ -240,6 +241,16 @@ Array [
       "redirects",
       "user-timings",
       "dom-size",
+    ],
+  },
+  Object {
+    "id": "wix",
+    "keys": Array [
+      "modern-image-formats",
+      "render-blocking-resources",
+      "efficient-animated-content",
+      "unused-javascript",
+      "server-response-time",
     ],
   },
   Object {

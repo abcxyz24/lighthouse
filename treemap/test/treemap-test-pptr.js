@@ -7,6 +7,7 @@
 import fs from 'fs';
 
 import puppeteer from 'puppeteer';
+import {getChromePath} from 'chrome-launcher';
 
 import {Server} from '../../cli/test/fixtures/static-server.js';
 import {LH_ROOT} from '../../root.js';
@@ -50,6 +51,7 @@ describe('Lighthouse Treemap', () => {
     if (!browser) {
       browser = await puppeteer.launch({
         headless: true,
+        executablePath: getChromePath(),
       });
     }
     page = await browser.newPage();

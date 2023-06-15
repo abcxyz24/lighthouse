@@ -41,15 +41,17 @@ class TimeToFirstByte extends NavigationMetric {
    * @return {Promise<LH.Artifacts.Metric>}
    */
   static async computeObservedMetric(data, context) {
+    const mainResource = await MainResource.request(data, context);
+    if (!mainResource.timing) {
+      throw new Error('missing timing for main resource');
+    }
+
     const {processedNavigation} = data;
     const timeOriginTs = processedNavigation.timestamps.timeOrigin;
-    const mainResource = await MainResource.request(data, context);
-
-    // Technically TTFB is the start of the response headers not the end.
-    // That signal isn't available to us so we use header end time as a best guess.
-    const timestamp = mainResource.responseHeadersEndTime * 1000;
+    const timestampMs =
+      mainResource.timing.requestTime * 1000 + mainResource.timing.receiveHeadersStart;
+    const timestamp = timestampMs * 1000;
     const timing = (timestamp - timeOriginTs) / 1000;
-
     return {timing, timestamp};
   }
 }

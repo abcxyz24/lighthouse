@@ -34,7 +34,7 @@ import {
 // This test will fail (by default) in headful mode, as the target page never gets painted.
 // To resolve this when debugging, just make sure the target page is visible during the lighthouse run.
 
-describe.skipOnParallel('Navigation', async function() {
+describe('Navigation', async function() {
   // The tests in this suite are particularly slow
   if (this.timeout() !== 0) {
     this.timeout(60_000);
@@ -113,7 +113,7 @@ describe.skipOnParallel('Navigation', async function() {
           assert.strictEqual(numNavigations, 6);
         }
 
-        assert.strictEqual(lhr.lighthouseVersion, '10.2.0');
+        assert.strictEqual(lhr.lighthouseVersion, '10.3.0');
         assert.match(lhr.finalUrl, /^https:\/\/localhost:[0-9]+\/test\/e2e\/resources\/lighthouse\/hello.html/);
 
         assert.strictEqual(lhr.configSettings.throttlingMethod, 'simulate');

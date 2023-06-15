@@ -150,15 +150,11 @@ describe('Performance: metrics', () => {
     const {details} = await MetricsAudit.audit(artifacts, context);
     expect(details.items[0]).toMatchObject({
       cumulativeLayoutShift: undefined,
-      cumulativeLayoutShiftMainFrame: undefined,
-      totalCumulativeLayoutShift: undefined,
       observedCumulativeLayoutShift: undefined,
-      observedCumulativeLayoutShiftMainFrame: undefined,
-      observedTotalCumulativeLayoutShift: undefined,
     });
   });
 
-  it('evaluates new CLS correctly across all frames', async () => {
+  it('evaluates CLS correctly across all frames', async () => {
     const URL = getURLArtifactFromDevtoolsLog(clsAllFramesDevtoolsLog);
     const artifacts = {
       URL,
@@ -177,15 +173,9 @@ describe('Performance: metrics', () => {
     };
     const {details} = await MetricsAudit.audit(artifacts, context);
 
-    // Only a single main-frame shift event, so mfCls and oldCls are equal.
     expect(details.items[0]).toMatchObject({
       cumulativeLayoutShift: expect.toBeApproximately(0.026463, 6),
-      cumulativeLayoutShiftMainFrame: expect.toBeApproximately(0.001166, 6),
-      totalCumulativeLayoutShift: expect.toBeApproximately(0.001166, 6),
-
       observedCumulativeLayoutShift: expect.toBeApproximately(0.026463, 6),
-      observedCumulativeLayoutShiftMainFrame: expect.toBeApproximately(0.001166, 6),
-      observedTotalCumulativeLayoutShift: expect.toBeApproximately(0.001166, 6),
     });
   });
 
@@ -232,12 +222,7 @@ describe('Performance: metrics', () => {
     const {details} = await MetricsAudit.audit(artifacts, context);
     expect(details.items[0]).toMatchObject({
       cumulativeLayoutShift: expect.toBeApproximately(2.268816, 6),
-      cumulativeLayoutShiftMainFrame: expect.toBeApproximately(2.268816, 6),
-      totalCumulativeLayoutShift: expect.toBeApproximately(4.809794, 6),
-
       observedCumulativeLayoutShift: expect.toBeApproximately(2.268816, 6),
-      observedCumulativeLayoutShiftMainFrame: expect.toBeApproximately(2.268816, 6),
-      observedTotalCumulativeLayoutShift: expect.toBeApproximately(4.809794, 6),
     });
   });
 });

@@ -102,18 +102,9 @@ class CumulativeLayoutShift {
   }
 
   /**
-   * Sum all layout shift events from the entire trace.
-   * @param {Array<LayoutShiftEvent>} layoutShiftEvents
-   * @return {number}
-   */
-  static calculateTotalCumulativeLayoutShift(layoutShiftEvents) {
-    return layoutShiftEvents.reduce((sum, e) => sum += e.weightedScore, 0);
-  }
-
-  /**
    * @param {LH.Trace} trace
    * @param {LH.Artifacts.ComputedContext} context
-   * @return {Promise<{cumulativeLayoutShift: number, cumulativeLayoutShiftMainFrame: number, totalCumulativeLayoutShift: number}>}
+   * @return {Promise<{cumulativeLayoutShift: number, cumulativeLayoutShiftMainFrame: number}>}
    */
   static async compute_(trace, context) {
     const processedTrace = await ProcessedTrace.request(trace, context);
@@ -122,14 +113,9 @@ class CumulativeLayoutShift {
         CumulativeLayoutShift.getLayoutShiftEvents(processedTrace);
     const mainFrameShiftEvents = allFrameShiftEvents.filter(e => e.isMainFrame);
 
-    // The original Cumulative Layout Shift metric, the sum of all main-frame shift events.
-    const totalCumulativeLayoutShift =
-        CumulativeLayoutShift.calculateTotalCumulativeLayoutShift(mainFrameShiftEvents);
-
     return {
       cumulativeLayoutShift: CumulativeLayoutShift.calculate(allFrameShiftEvents),
       cumulativeLayoutShiftMainFrame: CumulativeLayoutShift.calculate(mainFrameShiftEvents),
-      totalCumulativeLayoutShift,
     };
   }
 }

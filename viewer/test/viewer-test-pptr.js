@@ -9,6 +9,7 @@ import assert from 'assert/strict';
 
 import puppeteer from 'puppeteer';
 import {expect} from 'expect';
+import {getChromePath} from 'chrome-launcher';
 
 import {Server} from '../../cli/test/fixtures/static-server.js';
 import defaultConfig from '../../core/config/default-config.js';
@@ -67,6 +68,7 @@ describe('Lighthouse Viewer', () => {
     // start puppeteer
     browser = await puppeteer.launch({
       headless: true,
+      executablePath: getChromePath(),
     });
     viewerPage = await browser.newPage();
     viewerPage.on('pageerror', pageError => pageErrors.push(pageError));

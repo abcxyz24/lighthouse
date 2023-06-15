@@ -8,6 +8,7 @@ import fs from 'fs';
 import assert from 'assert/strict';
 
 import puppeteer from 'puppeteer';
+import {getChromePath} from 'chrome-launcher';
 
 import AccessibilityGather from '../../../gather/gatherers/accessibility.js';
 import {LH_ROOT} from '../../../../root.js';
@@ -41,7 +42,9 @@ describe('a11y audits + aXe', () => {
   let browser;
 
   before(async () => {
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({
+      executablePath: getChromePath(),
+    });
   });
 
   after(async () => {

@@ -1,5 +1,5 @@
 {
-  "lighthouseVersion": "10.2.0",
+  "lighthouseVersion": "10.3.0",
   "requestedUrl": "http://localhost:10200/dobetterweb/dbw_tester.html",
   "mainDocumentUrl": "http://localhost:10200/dobetterweb/dbw_tester.html",
   "finalDisplayedUrl": "http://localhost:10200/dobetterweb/dbw_tester.html",
@@ -200,8 +200,7 @@
         "type": "debugdata",
         "items": [
           {
-            "cumulativeLayoutShiftMainFrame": 0.13570762803819444,
-            "totalCumulativeLayoutShift": 0.13570762803819444
+            "cumulativeLayoutShiftMainFrame": 0.13570762803819444
           }
         ]
       }
@@ -1942,7 +1941,6 @@
             "maxPotentialFID": 1175,
             "cumulativeLayoutShift": 0.13570762803819444,
             "cumulativeLayoutShiftMainFrame": 0.13570762803819444,
-            "totalCumulativeLayoutShift": 0.13570762803819444,
             "lcpLoadStart": 10849,
             "lcpLoadEnd": 12900,
             "timeToFirstByte": 572,
@@ -1971,7 +1969,6 @@
             "observedDomContentLoadedTs": 8704886496,
             "observedCumulativeLayoutShift": 0.13570762803819444,
             "observedCumulativeLayoutShiftMainFrame": 0.13570762803819444,
-            "observedTotalCumulativeLayoutShift": 0.13570762803819444,
             "observedFirstVisualChange": 8058,
             "observedFirstVisualChangeTs": 8704758822,
             "observedLastVisualChange": 8893,
@@ -2309,7 +2306,7 @@
       "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)",
       "score": null,
       "scoreDisplayMode": "informative",
-      "displayValue": "1 element found",
+      "displayValue": "13,320 ms",
       "details": {
         "type": "list",
         "items": [
@@ -9093,6 +9090,12 @@
             "timeInMs": 582.2760000000001
           },
           "path": "audits[network-server-latency].displayValue"
+        },
+        {
+          "values": {
+            "timeInMs": 13319.961
+          },
+          "path": "audits[largest-contentful-paint-element].displayValue"
         }
       ],
       "core/lib/i18n/i18n.js | maxPotentialFIDMetric": [
@@ -9513,20 +9516,6 @@
       "core/audits/largest-contentful-paint-element.js | description": [
         "audits[largest-contentful-paint-element].description"
       ],
-      "core/lib/i18n/i18n.js | displayValueElementsFound": [
-        {
-          "values": {
-            "nodeCount": 1
-          },
-          "path": "audits[largest-contentful-paint-element].displayValue"
-        },
-        {
-          "values": {
-            "nodeCount": 5
-          },
-          "path": "audits[layout-shift-elements].displayValue"
-        }
-      ],
       "core/lib/i18n/i18n.js | columnElement": [
         "audits[largest-contentful-paint-element].details.items[0].headings[0].label",
         "audits[layout-shift-elements].details.headings[0].label",
@@ -9565,6 +9554,14 @@
       ],
       "core/audits/layout-shift-elements.js | description": [
         "audits[layout-shift-elements].description"
+      ],
+      "core/lib/i18n/i18n.js | displayValueElementsFound": [
+        {
+          "values": {
+            "nodeCount": 5
+          },
+          "path": "audits[layout-shift-elements].displayValue"
+        }
       ],
       "core/audits/layout-shift-elements.js | columnContribution": [
         "audits[layout-shift-elements].details.headings[1].label"

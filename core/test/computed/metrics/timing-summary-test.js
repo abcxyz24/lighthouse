@@ -66,7 +66,6 @@ describe('Timing summary', () => {
         "observedSpeedIndexTs": 10328522489.12,
         "observedTimeOrigin": 0,
         "observedTimeOriginTs": 10327187909,
-        "observedTotalCumulativeLayoutShift": 0.0011656245471340055,
         "observedTraceEnd": 14214.313,
         "observedTraceEndTs": 10341402222,
         "speedIndex": 1335,
@@ -74,7 +73,6 @@ describe('Timing summary', () => {
         "timeToFirstByte": 570.329,
         "timeToFirstByteTs": 10327758238,
         "totalBlockingTime": 2.7429999999994834,
-        "totalCumulativeLayoutShift": 0.0011656245471340055,
       }
     `);
     // Includes performance metrics

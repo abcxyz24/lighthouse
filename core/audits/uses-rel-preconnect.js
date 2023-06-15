@@ -72,7 +72,7 @@ class UsesRelPreconnectAudit extends Audit {
    * @return {boolean}
    */
   static hasValidTiming(record) {
-    return !!record.timing && record.timing.connectEnd > 0 && record.timing.connectStart > 0;
+    return !!record.timing && record.timing.connectEnd >= 0 && record.timing.connectStart >= 0;
   }
 
   /**
@@ -81,11 +81,27 @@ class UsesRelPreconnectAudit extends Audit {
    * @return {boolean}
    */
   static hasAlreadyConnectedToOrigin(record) {
-    return (
-      !!record.timing &&
+    if (!record.timing) return false;
+
+    // When these values are given as -1, that means the page has
+    // a connection for this origin and paid these costs already.
+    if (
+      record.timing.dnsStart === -1 && record.timing.dnsEnd === -1 &&
+      record.timing.connectStart === -1 && record.timing.connectEnd === -1
+    ) {
+      return true;
+    }
+
+    // Less understood: if the connection setup took no time at all, consider
+    // it the same as the above. It is unclear if this is correct, or is even possible.
+    if (
       record.timing.dnsEnd - record.timing.dnsStart === 0 &&
       record.timing.connectEnd - record.timing.connectStart === 0
-    );
+    ) {
+      return true;
+    }
+
+    return false;
   }
 
   /**

@@ -16,6 +16,7 @@
 import puppeteer from 'puppeteer';
 import lighthouse from 'lighthouse';
 import {expect} from 'expect';
+import {getChromePath} from 'chrome-launcher';
 
 import server from '../auth/server/server.js';
 import {login, logout} from '../auth/example-lh-auth.js';
@@ -84,6 +85,7 @@ describe('my site', () => {
       args: [`--remote-debugging-port=${CHROME_DEBUG_PORT}`],
       headless: !process.env.DEBUG,
       slowMo: process.env.DEBUG ? 50 : undefined,
+      executablePath: getChromePath(),
     });
   });
 

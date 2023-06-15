@@ -43,10 +43,15 @@ class ServerResponseTime extends Audit {
 
   /**
    * @param {LH.Artifacts.NetworkRequest} record
+   * @return {number|null}
    */
   static calculateResponseTime(record) {
-    const timing = record.timing;
-    return timing ? timing.receiveHeadersEnd - timing.sendEnd : 0;
+    // Lightrider does not have timings for sendEnd, but we do have this timing which should be
+    // close to the response time.
+    if (global.isLightrider && record.lrStatistics) return record.lrStatistics.requestMs;
+
+    if (!record.timing) return null;
+    return record.timing.receiveHeadersStart - record.timing.sendEnd;
   }
 
   /**
@@ -61,6 +66,10 @@ class ServerResponseTime extends Audit {
     const mainResource = await MainResource.request({devtoolsLog, URL: artifacts.URL}, context);
 
     const responseTime = ServerResponseTime.calculateResponseTime(mainResource);
+    if (responseTime === null) {
+      throw new Error('no timing found for main resource');
+    }
+
     const passed = responseTime < TOO_SLOW_THRESHOLD_MS;
     const displayValue = str_(UIStrings.displayValue, {timeInMs: responseTime});
 

@@ -47,7 +47,6 @@ Object {
   "observedSpeedIndexTs": 760623438456,
   "observedTimeOrigin": 0,
   "observedTimeOriginTs": 760620643599,
-  "observedTotalCumulativeLayoutShift": 0,
   "observedTraceEnd": 4778,
   "observedTraceEndTs": 760625421283,
   "speedIndex": 6313,
@@ -55,7 +54,6 @@ Object {
   "timeToFirstByte": 2394,
   "timeToFirstByteTs": undefined,
   "totalBlockingTime": 162,
-  "totalCumulativeLayoutShift": 0,
 }
 `;
 
@@ -106,7 +104,6 @@ Object {
   "observedSpeedIndexTs": 23467605703,
   "observedTimeOrigin": 0,
   "observedTimeOriginTs": 23466023130,
-  "observedTotalCumulativeLayoutShift": undefined,
   "observedTraceEnd": 6006,
   "observedTraceEndTs": 23472029453,
   "speedIndex": 1583,
@@ -114,7 +111,6 @@ Object {
   "timeToFirstByte": 565,
   "timeToFirstByteTs": 23466588051,
   "totalBlockingTime": 0,
-  "totalCumulativeLayoutShift": undefined,
 }
 `;
 
@@ -165,7 +161,6 @@ Object {
   "observedSpeedIndexTs": 713038416494,
   "observedTimeOrigin": 0,
   "observedTimeOriginTs": 713037023064,
-  "observedTotalCumulativeLayoutShift": 0,
   "observedTraceEnd": 7416,
   "observedTraceEndTs": 713044439102,
   "speedIndex": 3683,
@@ -173,7 +168,6 @@ Object {
   "timeToFirstByte": 611,
   "timeToFirstByteTs": undefined,
   "totalBlockingTime": 1205,
-  "totalCumulativeLayoutShift": 0,
 }
 `;
 
@@ -224,7 +218,6 @@ Object {
   "observedSpeedIndexTs": 225414776724,
   "observedTimeOrigin": 0,
   "observedTimeOriginTs": 225414172015,
-  "observedTotalCumulativeLayoutShift": 0,
   "observedTraceEnd": 12540,
   "observedTraceEndTs": 225426711887,
   "speedIndex": 605,
@@ -232,7 +225,6 @@ Object {
   "timeToFirstByte": 261,
   "timeToFirstByteTs": 225414432704,
   "totalBlockingTime": 48,
-  "totalCumulativeLayoutShift": 0,
 }
 `;
 
@@ -283,7 +275,6 @@ Object {
   "observedSpeedIndexTs": 225414776724,
   "observedTimeOrigin": 0,
   "observedTimeOriginTs": 225414172015,
-  "observedTotalCumulativeLayoutShift": 0,
   "observedTraceEnd": 12540,
   "observedTraceEndTs": 225426711887,
   "speedIndex": 1676,
@@ -291,6 +282,5 @@ Object {
   "timeToFirstByte": 760,
   "timeToFirstByteTs": undefined,
   "totalBlockingTime": 777,
-  "totalCumulativeLayoutShift": 0,
 }
 `;
