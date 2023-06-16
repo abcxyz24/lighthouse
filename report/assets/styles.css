@@ -670,7 +670,8 @@
 }
 
 .lh-metricfilter__radio {
-  position: absolute;
+  /* Instead of hiding, position of screen so it's still accessible to screen readers */
+  position: fixed;
   left: -9999px;
 }
 .lh-metricfilter input[type='radio']:focus-visible + label {
