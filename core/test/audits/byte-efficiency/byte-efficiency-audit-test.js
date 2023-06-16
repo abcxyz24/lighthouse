@@ -171,8 +171,8 @@ describe('Byte efficiency base audit', () => {
       ],
     }, simulator, metricComputationInput, {computedCache: new Map()});
 
-    expect(result.metricSavings.FCP).toEqual(900);
-    expect(result.metricSavings.LCP).toBeCloseTo(2384.2, 0.1);
+    assert.equal(result.metricSavings.FCP, 900);
+    assert.equal(result.metricSavings.LCP, 2380);
   });
 
   it('should score the wastedMs', async () => {
@@ -206,7 +206,7 @@ describe('Byte efficiency base audit', () => {
     metricComputationInput.gatherContext.gatherMode = 'timespan';
     const negativeResult = await ByteEfficiencyAudit.createAuditProduct({
       headings: baseHeadings,
-      items: [{url: 'http://example.com/', wastedBytes: -1 * 1000}],
+      items: [{url: 'http://example.com/', wastedBytes: -1 * 10000}],
     }, simulator, metricComputationInput, {computedCache: new Map()});
 
     assert.equal(negativeResult.score, 1);
@@ -397,7 +397,7 @@ describe('Byte efficiency base audit', () => {
     const modestThrottling = {rttMs: 150, throughputKbps: 1000, cpuSlowdownMultiplier: 2};
     const settings = {throttlingMethod: 'simulate', throttling: modestThrottling};
     const result = await MockAudit.audit(artifacts, {settings, computedCache});
-    expect(result.details.overallSavingsMs).toBeCloseTo(2118.99);
+    expect(result.details.overallSavingsMs).toEqual(2120);
   });
 
   it('should return n/a if no network records in timespan mode', async () => {
@@ -454,7 +454,7 @@ describe('Byte efficiency base audit', () => {
     };
     const settings = {throttlingMethod: 'devtools', throttling: modestThrottling};
     const result = await MockAudit.audit(artifacts, {settings, computedCache});
-    expect(result.details.overallSavingsMs).toBeCloseTo(26, 1);
+    expect(result.details.overallSavingsMs).toEqual(30);
   });
 
   describe('#scoreForWastedMs', () => {
